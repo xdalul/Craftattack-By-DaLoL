@@ -718,6 +718,7 @@ command /home:
 on inventory click:
 	if event-inventory's display name contains "ʜᴏᴍᴇs":
 		if {home.open.%player%} is set:
+			cancel event
 			if clicked slot is 11:
 				if {1.home.%player%} is not set:
 					cancel event
@@ -758,8 +759,6 @@ on inventory click:
 				cancel event
 				delete {home.open.%player%}
 				close player's inventory 
-		else:
-			send "&8[<##ff2200>ʜᴏᴍᴇs&8] &cEs ist ein Fehler aufgetreten!"
 
 
 command /delhome <text>:
@@ -822,11 +821,11 @@ command /warps:
 
 on inventory click:
 	if event-inventory's display name contains "ᴡᴀʀᴘs":
-		cancel event
 		if {warps.open.%player%} is set:
 			cancel event
 			if clicked slot is 11:
 				cancel event
+				delete {warps.open.%player%}
 				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
 				wait 1 second
 				make console execute command "execute in minecraft:overworld run tp %player% -282.70 85.00 1800.51 -449.86 -0.15"
@@ -834,6 +833,7 @@ on inventory click:
 				close player's inventory
 			if clicked slot is 12:
 				cancel event
+				delete {warps.open.%player%}
 				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
 				wait 1 second
 				make console execute command "execute in minecraft:overworld run tp %player% -318.70 46.00 1778.39 -89.11 0.15"
@@ -841,6 +841,7 @@ on inventory click:
 				close player's inventory
 			if clicked slot is 14:
 				cancel event
+				delete {warps.open.%player%}
 				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
 				wait 1 second
 				make console execute command "execute in minecraft:overworld run tp %player% -55.61 70.00 -8.30 -178.36 6.75"
@@ -848,6 +849,7 @@ on inventory click:
 				close player's inventory
 			if clicked slot is 15:
 				cancel event
+				delete {warps.open.%player%}
 				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
 				wait 1 second
 				make console execute command "execute in minecraft:overworld run tp %player% -348.70 92.00 1840.49 -1168.66 2.70"
@@ -855,6 +857,7 @@ on inventory click:
 				close player's inventory
 			if clicked slot is 23:
 				cancel event
+				delete {warps.open.%player%}
 				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
 				wait 1 second
 				make console execute command "execute in minecraft:overworld run tp %player% -288.42 80.00 1904.37 -1079.84 5.18"
@@ -862,11 +865,12 @@ on inventory click:
 				close player's inventory
 			if clicked slot is 27:
 				cancel event
+				delete {warps.open.%player%}
 				close player's inventory
 			if clicked slot is 35:
 				cancel event
-		else:
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &cEs ist ein Fehler aufgetreten!"
+				delete {warps.open.%player%}
+
 command /kalender:
 	trigger:
 		make player execute command "/christmascalendar open"
