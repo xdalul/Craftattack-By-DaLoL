@@ -1,0 +1,871 @@
+# Craftattack II API (Erneuert)
+
+options:
+	perm: <##D6FF00>⚠ Du hast keine Berechtigungen für diesen Befehl!
+
+
+# Error Farbe: D6FF00
+# Normale Farbe: DFFFF6
+# Entfernt Farbe: FF9898
+# Wartungsarbeiten Text Farben: C60000
+# Wartung-Disconnect Farben: 
+
+
+command /status [<text>] [<text>]:
+	trigger:
+		if player is in world "world" or "world_nether" or "world_the_end":
+			if arg-1 is "live":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&9LIVE&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "record":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&cREC&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "police":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&bPOLIZEI&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "redstone":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&4REDSTONE&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "goblin":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&2GOBLIN&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "afk":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&8AFK&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "boom":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&4BOOM&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "god":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&6GOD&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "engel":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[ENGEL] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "rp" or "roleplay":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&dRP&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "friendly":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aFriendly&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "evil":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&4Evil&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "idiot":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&dIdiot&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "mörder":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&0Mörder&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "kopfgeldjäger":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&6Kopfgeldjäger&f]"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "event":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aE&dV&bE&9N&3T&f] 
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "traveling":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aTraveling&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "geilo":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&eGEILO&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "pepega":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aPepega&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "king":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&e&lKING&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "pinguin":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&bPinguin&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "legende":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&eLegende&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "insimodus":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&6Insi-Modus&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "smash":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aSmash&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "ghg":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&5GHG&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
+			if arg-1 is "wanted":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&cWANTED&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert."
+			if arg-1 is "elite":
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&eElite&f] &7"""
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert."
+			if arg-1 is "off":
+				make console execute command "lp user %player% meta removeprefix 100"
+				send formatted "<##DFFFF6>Dein Status wurde erfolgreich Entfernt."
+			if arg-1 is not set:
+				send formatted "<##D6FF00>/status help 1 für Hilfe."
+			if arg-1 is "help":
+				if arg-2 is "1":
+					send "&8---[&6Statuse Seite 1&8]---"
+					send "&7live: &f[&9LIVE&f]"
+					send "&7record: &f[&cREC&f]"
+					send "&7police: &f[&bPOLIZEI&f]"
+					send "&7redstone: &f[&4REDSTONE&f]"
+					send "&7goblin: &f[&2GOBLIN&f]"
+					send "&7afk: &f[&8AFK&f]"
+					send "&7boom: &f[&4BOOM&f]"
+					send "&7god: &f[&6GOD&f]"
+					send "&7engel: &f[ENGEL]"
+					send "&7rp, roleplay: &f[&dRP&f]"
+					send "&7friendly: &f[&aFriendly&f]"
+					send "&7evil: &f[&4Evil&f]"
+					send "&7idiot: &f[&dIdiot&f]"
+					send "&7&oNächste seite &9- &e/status help 2"
+					send "&8---[&6Statuse Seite 1&8]---"
+				if arg-2 is "2":
+					send "&8---[&6Statuse Seite 2&8]---"
+					send "&7kriminell: &f[&4KRIMINELL&f]"
+					send "&7mörder: &f[&0Mörder&f]"
+					send "&7kopfgeldjäger: &f[&6Kopfgeldjäger&f]"
+					send "&7event: &f[&aE&dV&bE&9N&3T&f]"
+					send "&7traveling: &f[&aTraveling&f]"
+					send "&7geilo: &f[&eGEILO&f]"
+					send "&7anarchy: &f[&4&lAnarchy&f]"
+					send "&7pepega: &f[&aPepega&f]"
+					send "&7king: &f[&e&lKING&f]"
+					send "&7pinguin: &f[&bPinguin&f]"
+					send "&7legende: &f[&eLegende&f]"
+					send "&7insimodus: &f[&6Insi-Modus&f]"
+					send "&7smash: &f[&aSmash&f]"
+					send "&8---[&6Statuse Seite 2&8]---"
+				if arg-2 is "3":
+					send "&8---[&6Statuse Seite 3&8]---"
+					send "&7GHG: &f[&5GHG&f]"
+					send "&7Wanted: &f[&cWANTED&f]"
+					send "&7Elite: &f[&eElite&f]"
+					send "&8---[&6Statuse Seite 3&8]---"
+
+command /wiki:
+	trigger:
+		send formatted "<##DFFFF6>Craftattack Wiki: &nhttps://bit.ly/craftattack-wiki"
+
+command /reload [<text>]:
+	permission: admin.reload
+	permission message: {@perm}
+	trigger:
+		if arg-1 is "server":
+			broadcast formatted "<##D6FF00>⚠ Der Server wird 1 Mal komplett neugeladen es kann zu Verzögerungen von Verschiedenen Aktionen kommen ⚠"
+			make console execute command "rl confirm"
+		if arg-1 is "skripts":
+			make console execute command "skript reload scripts"
+			send formatted "<##D6FF00>Die Skripts werden nun neu geladen."
+
+
+command /stop:
+	permission: admin.restart
+	permission message: {@perm}
+	trigger:
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in 10 Sekunden neugestartet ⚠"
+		wait 5 seconds
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in 5 Sekunden neugestartet ⚠"
+		wait 2 seconds
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in 3 Sekunden neugestartet ⚠"
+		wait 1 second
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in 2 Sekunden neugestartet ⚠"
+		wait 1 second
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in 1 Sekunden neugestartet ⚠"
+		wait 1 second
+		broadcast formatted "<##D6FF00>⚠ Der Server wird in kürze neugestartet ⚠"
+		wait 1 seconds
+		loop all players:
+			kick loop-player due to formatted "<##D6FF00>Der Server startet kurz neu! %nl% Bitte Betrete den Server in 30 Sekunden erneut."
+		restart the server
+
+command /wartung [<text>]:
+	permission: wartung.admin
+	permission message: {@perm}
+	trigger:
+		if arg-1 is "an":
+			send formatted "<##D6FF00>Du hast die Wartungsarbeiten aktivert."
+			set {wartung} to true
+			loop all players:
+				kick loop-player due to formatted "<##FF8700>⚠ Wartungsarbeiten ⚠ %nl%%nl%<##86FFF3>Wir erwarten deine Anreise Bald...%nl%%nl%<##BCFFF8>→ bit.ly/crafattack-discord ←"
+		if arg-1 is "aus":
+			send formatted "<##D6FF00>Du hast die Wartungsarbeiten deaktivert."
+			set {wartung} to false
+
+
+on server ping:
+	if {wartung} is true:
+		set motd to formatted "   <##D6FF00>ᴄʀᴀғᴛᴀᴛᴛᴀᴄᴋ 2.5 &8| <##C60000>ᴡᴀʀᴛᴜɴɢsᴀʀʙᴇɪᴛᴇɴ &8| <##7A00FF>&l1.19.1+%nl%        &c&oᴡɪʀ sɪɴᴅ ʙᴀʟᴅ ᴡɪᴇᴅᴇʀ ᴏɴʟɪɴᴇ!"
+
+on server ping:
+	if {wartung} is false:
+		set motd to formatted "   <##D6FF00>ᴄʀᴀғᴛᴀᴛᴛᴀᴄᴋ 2.5 &8| <##4DED62>ᴏɴʟɪɴᴇ &8| <##7A00FF>&l1.19.1+%nl%   <##ff2200>ʜᴏᴍᴇ & ᴛᴘᴀ sʏsᴛᴇᴍ ᴇʀɴᴇᴜᴇʀᴛ"
+
+on join:
+	if player don't have permission "wartung.bypass":
+		if {wartung} is true:
+			kick player due to formatted "<##FF8700>⚠ Wartungsarbeiten ⚠ %nl%%nl%<##86FFF3>Wir erwarten deine Anreise Bald...%nl%%nl%<##BCFFF8>→ bit.ly/crafattack-discord ←"
+	
+command /lastupdate:
+	trigger:
+		send formatted "&8&m     &8[<##B572FF>Last Updates&8]&m     "
+		send formatted "<##BCFFF8>Die Tablist wurde aktuallisiert."
+		send formatted "<##BCFFF8>Die Jahreszeiten und die Temperaturen sind nun auf deutsch übersetzt."
+		send formatted "&8&m     &8[<##B572FF>Last Updates&8]&m     "
+
+command /adminmode:
+	trigger:
+		if {admin.%player%} is not set:
+			set player's gamemode to creative
+			broadcast formatted "<##BCFFF8>%player% ist nun im Admin Modus (Creative Modus falls es Fehler im System gibt.)"
+
+on join:
+	set join message to formatted "<##BCFFF8>%player% hat den Server betreten."
+
+on quit:
+	set quit message to formatted "<##BCFFF8>%player% hat den Server verlassen."
+
+command /werkbank:
+	trigger:
+		open crafting table to player
+		send formatted "<##BCFFF8>Du hast die Werkbank geöffnet."
+
+command /craft:
+	trigger:
+		open crafting table to player
+		send formatted "<##BCFFF8>Du hast die Werkbank geöffnet."
+
+command /event:
+	cooldown: 10 seconds
+	cooldown message: <##BCFFF8>Diese Befehl hat einen 10 Sekunden Cooldown!
+	trigger:
+		if player don't have permission "organisation":
+			send formatted "<##D6FF00>⚠ Nur Organisations Mitglieder können momentan die Event-Welt betreten!"
+		else:
+			send formatted "<##D6FF00>⚠ Die Event-Welt exisitert noch nicht!"
+
+on first join:
+	broadcast formatted "<##BCFFF8>%player% ist neu auf dem Server! Willkommen!"
+
+
+command /die:
+	trigger:
+		send formatted "<##BCFFF8>Du wurdest erfolgreich getötet"
+		kill the player
+
+
+
+command /help:
+	trigger:
+		send formatted "&8&m               &8[<##D6FF00>Hilfe&8]&m               "
+		send formatted "<##BCFFF8>/status - Ändere dein Status beliebig."
+		send formatted "<##BCFFF8>/wiki - Leitet dich zum CA II Wiki. <##D6FF00>"
+		send formatted "<##BCFFF8>/die - Töted dich selbst. "
+		send formatted "<##BCFFF8>/event - Betrete die Event Welt <##D6FF00>(Falls Offen)"
+		send formatted "<##BCFFF8>/craft - Öffnet Crafting Table <##D6FF00>(Kann jeder benutzen.)"
+		send formatted "<##BCFFF8>/mülleimer - Öffnet den Mülleimer <##D6FF00>(aus CA 1 Schon bekannt.)"
+		send formatted "<##BCFFF8>/afk - Zeigt an ob du anwesend bist oder nicht."
+		send formatted "&8&m               &8[<##D6FF00>Hilfe&8]&m               "
+command /gamemode <text>:
+	usage: <##D6FF00>⚠ Richtige benutzung: /gamemode 1,2,3,0
+	permission: gm.admin
+	permission message: {@perm}
+	trigger:
+		if arg-1 is "1" or "creative":
+			set player's gamemode to creative
+			send "&8[&cGM&8] <##BCFFF8>Du hast dein Spielmodus zu Kreativmodus geändert."
+		if arg-1 is "2" or "adventure":
+			set player's gamemode to adventure
+			send "&8[&cGM&8] <##BCFFF8>Du hast dein Spielmodus zu Abenteuermodus geändert."
+		if arg-1 is "3" or "spectator":
+			set player's gamemode to spectator
+			send "&8[&cGM&8] <##BCFFF8>Du hast dein Spielmodus zu Zuschauermodus geändert."
+		if arg-1 is "0" or "survival":
+			set player's gamemode to survival
+			send "&8[&cGM&8] <##BCFFF8>Du hast dein Spielmodus zu Überlebensmodus geändert."
+command /gm <text>:
+	usage: <##D6FF00>⚠ Richtige benutzung: /gamemode 1,2,3,0
+	permission: gm.admin
+	permission message: {@perm}
+	trigger:
+		if arg-1 is "1" or "creative":
+			set player's gamemode to creative
+			send "<##BCFFF8>Du hast dein Spielmodus zu Kreativmodus gesetzt."
+		if arg-1 is "2" or "adventure":
+			set player's gamemode to adventure
+			send "<##BCFFF8>Du hast dein Spielmodus zu Abenteuermodus gesetzt."
+		if arg-1 is "3" or "spectator":
+			set player's gamemode to spectator
+			send "<##BCFFF8>Du hast dein Spielmodus zu Zuschauermodus geändert."
+		if arg-1 is "0" or "survival":
+			set player's gamemode to survival
+			send "<##BCFFF8>Du hast dein Spielmodus zu Überlebensmodus geändert."
+
+
+command /nick <text>:
+	usage: <##D6FF00>⚠ Bitte gebe ein Namen an.
+	trigger:
+		if arg-1 contains "hurensohn", "hs", "fick", "ficken" or "sex":
+			send formatted "<##D6FF00>⚠ Du darfst nicht diesen Namen benutzen!"
+		else:
+			set player's displayname to "%the 1st argument%"
+
+command /mülleimer:
+	aliases: müll
+	trigger:
+		set {_gui} to a new chest inventory with 6 row with name formatted "<##D6FF00>Mülleimer" 
+		set slot 45 of {_gui} to black stained glass pane named "&7"
+		set slot 46 of {_gui} to black stained glass pane named "&7"
+		set slot 47 of {_gui} to black stained glass pane named "&7"
+		set slot 48 of {_gui} to black stained glass pane named "&7"
+		set slot 49 of {_gui} to black stained glass pane named "&7"
+		set slot 50 of {_gui} to black stained glass pane named "&7"
+		set slot 51 of {_gui} to black stained glass pane named "&7"
+		set slot 52 of {_gui} to black stained glass pane named "&7"
+		set slot 53 of {_gui} to redstone block named "&c&lAchtung!" with lore "&7Die Items verschwinden%nl%&7Danach also pass auf!"
+		open {_gui} to player
+		send formatted "<##D6FF00>Du hast dein Mülleimer geöffnet."
+
+on command "/back":
+	cancel event
+	send formatted "<##D6FF00>⚠ Dieser Command ist auf dem Server deaktiviert!"
+on command "/eback":
+	cancel event
+	send formatted "<##D6FF00>⚠ Dieser Command ist auf dem Server deaktiviert!"
+on command "/essentials:back":
+	cancel event
+	send formatted "<##D6FF00>⚠ Dieser Command ist auf dem Server deaktiviert!"
+
+
+#on command:
+#	if sender is a player:
+#		cancel event
+#		send "&2&lSERVER &8» &cCommands sind momentan wegen Sicherheitsgründen deaktiviert."
+
+command /afk:
+	trigger:
+		if {afk.%player%} is not set:
+			set {afk.%player%} to true
+			send formatted "<##BCFFF8>Du wurdest nun als abwesend makiert."
+			broadcast formatted "<##BCFFF8>%player% ist nun abwesend."
+			stop
+		if {afk.%player%} is true:
+			delete {afk.%player%}
+			broadcast formatted "<##BCFFF8>%player% ist nun nicht mehr abwesend."
+			send formatted "<##BCFFF8>Du bist nun nicht mehr abwesend makiert."
+			stop
+
+on any move:
+	if {afk.%player%} is true:
+		broadcast formatted "<##BCFFF8>%player% ist nun nicht mehr abwesend."
+		delete {afk.%player%}
+
+on chat:
+	if {afk.%player%} is true:
+		broadcast formatted "<##BCFFF8>%player% ist nun nicht mehr abwesend."
+		delete {afk.%player%}
+
+
+
+
+on death:
+	add 1 to {death.%victim%}
+
+command /tode:
+	trigger:
+		send formatted "<##BCFFF8>Du hast %{death.%player%}% Tode"
+
+command /projekt [<text>]:
+	permission: admin
+	trigger:
+		broadcast formatted "<##BCFFF8>Das Projekt startet nun in 30 Minuten!"
+		wait 15 minutes
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 15 Minuten!"
+		wait 5 minutes
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 10 Minuten!"
+		wait 5 minutes
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 5 Minuten!"
+		wait 2 minutes
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 3 Minuten!"
+		wait 2 minutes
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 1 Minute!"
+		wait 30 seconds
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 30 Sekunden!"
+		wait 15 seconds
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 15 Sekunden!"
+		wait 5 seconds
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 10 Sekunden"
+		make console execute command "title @a title ""§e§l10"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 9 Sekunden!"
+		make console execute command "title @a title ""§e§l9"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 8 Sekunden!"
+		make console execute command "title @a title ""§e§l8"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 7 Sekunden!"
+		make console execute command "title @a title ""§e§l7"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 6 Sekunden!"
+		make console execute command "title @a title ""§e§l6"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 5 Sekunden!"
+		make console execute command "title @a title ""§e§l5"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 4 Sekunden!"
+		make console execute command "title @a title ""§e§l4"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 3 Sekunden!"
+		make console execute command "title @a title ""§c§l3"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 2 Sekunden!"
+		make console execute command "title @a title ""§6§l2"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 1 Sekunde!"
+		make console execute command "title @a title ""§a§l1"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		make console execute command "title @a subtitle ""§7Viel Spaß!"""
+		make console execute command "title @a title ""§e§lProjekt Gestartet"""
+		make console execute command "playsound minecraft:entity.ender_dragon.ambient ambient @a ~ ~ ~ 4 1"
+		broadcast formatted "<##BCFFF8>Das Projekt wurde gestartet! &oViel Spaß wünscht euch das Admin Team!"
+		make console execute command "worldborder set 10000000 60"
+
+command /rang [<text>]:
+	trigger:
+		if arg-1 is "help":
+			send formatted "&8&m               &8[<##FF22CC>Ränge&8]&m               "
+			send formatted "&7administrator: &cAdministrator &8| &7%player%"
+			send formatted "&7supporter: &bSupporter &8| &7%player%"
+			send formatted "&8&m               &8[<##FF22CC>Ränge&8]&m               "
+		if arg-1 is "administrator" or "admin":
+			send formatted "<##BCFFF8>Du bist nun Admin!"
+			make console execute command "lp user %player% meta setprefix ""&##ff4b00A&#ff4508d&##ff3f10m&##ff3818i&##ff3220n&##ff2c28i&##ff2630s&##ff1f37t&##ff193fr&##ff1347a&##ff0d4ft&##ff0657o&##ff005fr&8| &7"""
+		if arg-1 is "supporter" or "support":
+			send formatted "<##BCFFF8>Du bist nun Supporter!"
+			make console execute command "lp user %player% meta setprefix ""&bSupporter &8| &7"""
+
+
+command /adminhelp:
+	permission: admin
+	trigger:
+		send formatted "&8&m               &8[<##E11B1C>AdminHilfe&8]&m               "
+		send formatted "<##BCFFF8>/rang admin,supporter - Ändert deinen Rang zu Admin oder Supporter"
+		send formatted "<##BCFFF8>/gm <gamemode> - Wechsle deinen Gamemode"
+		send formatted "<##BCFFF8>/stop - Startet den Server neu"
+		send formatted "<##BCFFF8>/reload skripts - Ladet die API neu"
+		send formatted "<##BCFFF8>/reload server - Der Server wird neugeladen"
+		send formatted "&8&m               &8[<##E11B1C>AdminHilfe&8]&m               "
+
+
+
+command /kit [<text>]:
+	trigger:
+		if arg-1 is "bundle":
+			if {bundle.%player%} is not set:
+				give the player 2 bundle named formatted "<##BCFFF8>Starter-Bundle"
+				send formatted "<##BCFFF8>Du hast das Bundle Kit erfolgreich eingelöst!"
+				set {bundle.%player%} to true
+				stop
+			if {bundle.%player%} is true:
+				send formatted "<##BCFFF8>Du hast das Kit schon eingelöst!"
+				stop
+
+
+
+command /kits <player>:
+	permission: admin
+	trigger:
+		delete {bundle.%arg-1%}
+		send formatted "<##BCFFF8>Du hast %arg-1%'s Bundle Kit reseted"
+
+command /tpa <text> <player>:
+	trigger:
+		if arg-1 is "send":
+			if arg-2 is set:
+				send formatted "&8[&bTPA&8] <##BCFFF8>Du hast %arg-2% eine TPA-Anfrage gesendet." to player
+				set {tpa.%player%} to true
+				set {tpa.Spieler} to "%player%"
+				set {_gui} to a new chest inventory with 3 row with name formatted "<##ff2200>ᴛᴘᴀ ᴠᴏɴ %player%"
+				set slot 11 of {_gui} to green stained glass named formatted "<##00ff0d>ᴀɴɴᴇʜᴍᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+				set slot 15 of {_gui} to red stained glass named formatted "<##ff0022>ᴀʙʟᴇʜɴᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+				set slot 18 of {_gui} to spruce sign named formatted "<##f03a1a>sᴄʜʟɪᴇssᴇɴ & ᴀʙʟᴇʜɴᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+				open {_gui} to arg-2 
+		if arg-1 is "accept":
+			if {tpa.%arg-2%} is true:
+				if arg-2 is set:
+					send formatted "&8[&bTPA&8] <##BCFFF8>Du hast die TPA-Anfrage von %arg-2% angenommen."
+					send formatted "&8[&bTPA&8] <##BCFFF8>%player% hat deine TPA-Anfrage angenommen." to arg-2
+					teleport arg-2 to player
+					set {tpa.%arg-2%} to false
+			else:
+				send formatted "&8[&bTPA&8] <##BCFFF8>%arg-2% hat dir keine TPA-Anfrage gesendet!"
+		if arg-1 is "deny":
+			if {tpa.%arg-2%} is true:
+				if arg-2 is set:
+					send formatted "&8[&bTPA&8] <##BCFFF8>Du hast die TPA-Anfrage von %arg-2% abgelehnt."
+					send formatted "&8[&bTPA&8] <##BCFFF8>%player% hat deine TPA-Anfrage abgelehnt." to arg-2
+					set {tpa.%arg-2%} to false
+
+
+on inventory click:
+	if event-inventory's display name contains "ᴛᴘᴀ ᴠᴏɴ":
+		if clicked slot is 11:
+			cancel event
+			make player execute command "/tpa accept %{tpa.spieler}%"
+			delete {tpa.spieler}
+			close player's inventory
+		if clicked slot is 15:
+			cancel event
+			make player execute command "/tpa deny %{tpa.spieler}%"
+			delete {tpa.spieler}
+			close player'S inventory
+		if clicked slot is 18:
+			cancel event
+			close player's inventory
+			make player execute command "/tpa deny %{tpa.spieler}%"
+			delete {tpa.spieler}
+
+
+command /start:
+	permission: admin
+	trigger:
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 10 Sekunden"
+		make console execute command "title @a title ""§e§l10"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 9 Sekunden!"
+		make console execute command "title @a title ""§e§l9"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 8 Sekunden!"
+		make console execute command "title @a title ""§e§l8"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 7 Sekunden!"
+		make console execute command "title @a title ""§e§l7"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 6 Sekunden!"
+		make console execute command "title @a title ""§e§l6"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 5 Sekunden!"
+		make console execute command "title @a title ""§e§l5"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 4 Sekunden!"
+		make console execute command "title @a title ""§e§l4"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 3 Sekunden!"
+		make console execute command "title @a title ""§c§l3"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 2 Sekunden!"
+		make console execute command "title @a title ""§6§l2"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		broadcast formatted "<##BCFFF8>Das Projekt startet in 1 Sekunde!"
+		make console execute command "title @a title ""§a§l1"""
+		make console execute command "playsound minecraft:entity.experience_orb.pickup ambient @a ~ ~ ~ 2 1"
+		wait 1 second
+		make console execute command "title @a subtitle ""§7Viel Spaß!"""
+		make console execute command "title @a title ""§e§lProjekt Gestartet"""
+		make console execute command "playsound minecraft:entity.ender_dragon.ambient ambient @a ~ ~ ~ 4 1"
+		broadcast formatted "<##BCFFF8>Das Projekt wurde gestartet! &oViel Spaß wünscht euch das Admin Team!"
+		make console execute command "worldborder set 10000000 60"
+
+command /umfrage <text>:
+	usage: &8[&eUmfrage&8] &7Richtige benutzung -> &E&n/umfrage <Nachricht>
+	permission: umfrage.admin
+	trigger:
+		broadcast "&8[&eUmfrage&8] &7%arg-1% %nl%&8[&eUmfrage&8] &a<tooltip:&aKlicke hier für Ja><command:/ja>Ja <reset>&8| <tooltip:&cKlicke hier für Nein><command:/nein>&cNein<reset>%nl%&8[&eUmfrage&8] &7&oBitte Klickt auf das was ihr wählen möchtet."
+		wait 30 seconds
+		broadcast "&8[&eUmfrage&8] &7Das Ergebnis ist: &a%{umfrage.ja}% für Ja &8| &c%{umfrage.nein}% für Nein."
+		delete {umfrage.ja}
+		delete {umfrage.nein}
+		loop all players:
+			set {umfrage.%uuid of loop-player%} to false
+
+command /ja:
+	trigger:
+		if {umfrage.%uuid of player%} is false:
+			add 1 to {umfrage.ja}
+			send "&8[&eUmfrage&8] &7Du hast erfolgreich für &aJa &7abgestimmt."
+			set {umfrage.%uuid of player%} to true
+		else:
+			send "&8[&eUmfrage&8] &7Du kannst nicht mehrmals &aJa &7abstimmen."
+
+command /nein:
+	trigger:
+		if {umfrage.%uuid of player%} is false:
+			add 1 to {umfrage.nein}
+			send "&8[&eUmfrage&8] &7Du hast erfolgreich für &cNein &7abgestimmt."
+			set {umfrage.%uuid of player%} to true
+		else:
+			send "&8[&eUmfrage&8] &7Du kannst nicht mehrmals &cNein &7abstimmen."
+on bed enter:
+	broadcast formatted "<##BCFFF8>&o%player% schläft ..zZz.."
+	wait 5 seconds
+	set time to 8:00
+
+command /ping [<player>]:
+	trigger:
+		if arg-1 is set:
+			send formatted "<##BCFFF8>%arg-1%'s Ping: %arg-1's ping%ms"
+		if arg-1 is not set:
+			send formatted "<##BCFFF8>Dein Ping: %player's ping%ms"
+
+command /breakbooster:
+	permission: admin
+	trigger:
+		make console execute command "effect give @a haste 900 1 true"
+		broadcast formatted "<##BCFFF8>%player% hat den <##FFA730>Break Booster <##BCFFF8>aktiviert (15 Minuten lang Haste 2)"
+
+command /speedbooster:
+	permission: admin
+	trigger:
+		make console execute command "effect give @a speed 900 0 true"
+		broadcast formatted "<##BCFFF8>%player% hat den <##FF6600>Speed Booster <##BCFFF8>aktiviert (15 Minuten lang Speed 1)"
+
+command /flybooster:
+	permission: admin
+	trigger:
+		loop all players:
+			send "test" to loop-player
+			make console execute command "fly %loop-player%"
+			
+
+command /damagebooster:
+	permission: admin
+	trigger:
+		broadcast formatted "<##BCFFF8>%player% hat den <##D61313>Damage Booster <##BCFFF8>aktiviert (15 Minuten lang Stärke 2)"
+		make console execute command "effect give @a strength 900 1 true"
+
+command /booster:
+	trigger:
+		make player execute command "/g 1"
+
+on every tick:
+	loop all players:
+		set tablist header of loop-player to formatted "<##37E602>ᴏɴʟɪɴᴇ   &8|   <##D6FF00>ᴄʀᴀꜰᴛᴀᴛᴛᴀᴄᴋ 2.5   &8|  v0.4.1%nl%"
+		set tablist footer of loop-player to formatted "%nl%<##ff2200>ʜᴏᴍᴇ & ᴛᴘᴀ sʏsᴛᴇᴍ ᴇʀɴᴇᴜᴇʀᴛ"
+
+command /report <text> [<text>]:
+	trigger:
+		if arg-1 is "bug":
+			if arg-2 is set:
+				send formatted "<##BCFFF8>Danke für dein Bug-Report wir versuchen es so schnell wie möglich zu fixen!"
+				set {bug} to formatted "<##BCFFF8>%arg-2%"
+
+command /reports <text> [<text>]:
+	permission: admin
+	trigger:
+		if arg-1 is "bug":
+			if {bug} is set:
+				send formatted "&8&m          &8[<##37E602>Bug Reports&8]&m          "
+				send formatted "%{bug}%"
+				send formatted "&8&m          &8[<##37E602>Bug Reports&8]&m          "
+			else:
+				send formatted "<##BCFFF8>Es gibt momentan keine Bug Reports!"
+			if arg-2 is "delete":
+				delete {bug}
+				send formatted "<##BCFFF8>Die Bug-Reports wurden entfernt."
+			if arg-2 is "done":
+				delete {bug}
+				send formatted "<##BCFFF8>Der Bug wurde als Fertig makiert."
+
+
+command /sethome <text> <text>:
+	trigger:
+		if arg-1 is "1":
+			if {1.home.%player%} is not set:
+				set {first.home.%player%} to location of player
+				set {1.home.%player%} to formatted "<##ff2200>%arg-2%"
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dein 1. Home-Platz wurde mit dem Namen ""<##ff2200>%arg-2%"" &7gesetzt."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dieser Home ist bereits gesetzt!"
+		if arg-1 is "2":
+			if {2.home.%player%} is not set:
+				set {second.home.%player%} to location of player
+				set {2.home.%player%} to formatted "<##ff2200>%arg-2%"
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dein 2. Home-Platz wurde mit dem Namen ""<##ff2200>%arg-2%"" &7gesetzt."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dieser Home ist bereits gesetzt!"
+		if arg-1 is "3":
+			if {3.home.%player%} is not set:
+				set {third.home.%player%} to location of player
+				set {3.home.%player%} to formatted "<##ff2200>%arg-2%"
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dein 3. Home-Platz wurde mit dem Namen ""<##ff2200>%arg-2%"" &7gesetzt."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Dieser Home ist bereits gesetzt!"
+
+command /home:
+	trigger:
+		set {_gui} to a new chest inventory with 3 row with name formatted "<##ff2200>ʜᴏᴍᴇs"
+		if {1.home.%player%} is not set:
+			set slot 11 of {_gui} to red stained glass pane named formatted "<##ff2693>ᴋᴇɪɴ ʜᴏᴍᴇ!" with lore "ᴅɪᴇsᴇʀ ʜᴏᴍᴇ ᴡᴜʀᴅᴇ%nl%ɴᴏᴄʜ ɴɪᴄʜᴛ ɢᴇsᴇᴛᴢᴛ."
+		else:
+			set slot 11 of {_gui} to black stained glass pane named formatted "%{1.home.%player%}%" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)%nl%%nl%&8Deine Home ID: 1"
+		if {2.home.%player%} is not set:
+			set slot 13 of {_gui} to red stained glass pane named formatted "<##ff2693>ᴋᴇɪɴ ʜᴏᴍᴇ!" with lore "ᴅɪᴇsᴇʀ ʜᴏᴍᴇ ᴡᴜʀᴅᴇ%nl%ɴᴏᴄʜ ɴɪᴄʜᴛ ɢᴇsᴇᴛᴢᴛ."
+		else:
+			set slot 13 of {_gui} to black stained glass pane named formatted "%{2.home.%player%}%" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)%nl%%nl%&8Deine Home ID: 2"
+		if {3.home.%player%} is not set:
+			set slot 15 of {_gui} to red stained glass pane named formatted "<##ff2693>ᴋᴇɪɴ ʜᴏᴍᴇ!" with lore "ᴅɪᴇsᴇʀ ʜᴏᴍᴇ ᴡᴜʀᴅᴇ%nl%ɴᴏᴄʜ ɴɪᴄʜᴛ ɢᴇsᴇᴛᴢᴛ."
+		else:
+			set slot 15 of {_gui} to black stained glass pane named formatted "%{3.home.%player%}%" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)%nl%%nl%&8Deine Home ID: 3"
+		set slot 18 of {_gui} to spruce sign named formatted "<##f03a1a>sᴄʜʟɪᴇssᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+		open {_gui} to player
+
+on inventory click:
+	if event-inventory's display name contains "ʜᴏᴍᴇs":
+		if clicked slot is 11:
+			if {1.home.%player%} is not set:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+			else:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+				close player's inventory
+				wait 1 second
+				teleport player to {first.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+		if clicked slot is 13:
+			if {2.home.%player%} is not set:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+			else:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+				close player's inventory
+				wait 1 second
+				teleport player to {second.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+		if clicked slot is 15:
+			if {3.home.%player%} is not set:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+			else:
+				cancel event
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+				close player's inventory
+				wait 1 second
+				teleport player to {third.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+		if clicked slot is 18:
+			cancel event
+			close player's inventory 
+
+command /delhome <text>:
+	trigger:
+		if arg-1 is "1":
+			if {1.home.%player%} is set:
+				delete {1.home.%player%}
+				delete {first.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu hast den 1. Home-Slot gelöscht."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu kannst nicht ein nicht vorhandenen Home-Slot löschen!"
+		if arg-1 is "2":
+			if {2.home.%player%} is set:
+				delete {2.home.%player%}
+				delete {second.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu hast den 2. Home-Slot gelöscht."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu kannst nicht ein nicht vorhandenen Home-Slot löschen!"
+		if arg-1 is "3":
+			if {3.home.%player%} is set:
+				delete {3.home.%player%}
+				delete {third.home.%player%}
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu hast den 3. Home-Slot gelöscht."
+			else:
+				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &cDu kannst nicht ein nicht vorhandenen Home-Slot löschen!"
+
+command /live [<text>]:
+	trigger:
+		if arg-1 is set:
+			send formatted "&8[&cLive&8] <##BCFFF8>Du hast dein Sub-Status auf &8| &c• LIVE <##BCFFF8>gesetzt."
+			make console execute command "lp user %player% meta setsuffix 100 "" &8| &c• LIVE"""
+			broadcast formatted "&8[&cLive&8] <##BCFFF8>%player% ist Live → %arg-1%"
+		else:
+			send formatted "&8[&cLive&8] <##BCFFF8>Bitte gebe deinen Stream-Link an."
+
+command /record:
+	trigger:
+		send formatted "&8[&cRecord&8] <##BCFFF8>Du hast dein Sub-Status auf &8| &c• REC <##BCFFF8>gesetzt."
+		make console execute command "lp user %player% meta setsuffix 100 "" &8| &c• REC"""
+
+command /sub-off:
+	trigger:
+		make console execute command "lp user %player% meta removesuffix 100"
+		send formatted "&8[&9Sub-Status&8] <##BCFFF8>Dein Sub-Status wurde entfernt."
+
+command /warps:
+	cooldown: 15 seconds
+	cooldown message: &8[<##ff003c>ᴡᴀʀᴘs&8] &cDieser Befehl hat einen 15 Sekunden Cooldown!
+	trigger:
+		set {_gui} to a new chest inventory with 4 row with name formatted "<##D6FF00>ᴡᴀʀᴘs"
+		set slot 11 of {_gui} to skull of "Jeeequeue" parsed as offline player named formatted "<##ff3300>ᴊᴇᴇᴇǫᴜᴇᴜᴇ" with lore "&7&o(Linksklick)"
+		set slot 12 of {_gui} to skull of "VBaggy" parsed as offline player named formatted "<##55b6f2>ʙᴀɢɢʏ & ᴛɪɴɢʟʏ" with lore "&7&o(Linksklick)"
+		set slot 14 of {_gui} to skull of "Paulinni" parsed as offline player named formatted "<##61a0ff>ᴘɪɴɢᴜɪɴᴅᴀᴠᴇ's ꜰɪsᴄʜᴇʀsʜüᴛᴛᴇ" with lore "&7&o(Linksklick)"
+		set slot 15 of {_gui} to skull of "VillagerNase" parsed as offline player named formatted "<##def3ff>ᴅᴀʟᴏʟ" with lore "&7&o(Linksklick)"
+		set slot 23 of {_gui} to skull of "Paulinni" parsed as offline player named formatted "<##61ddff>ᴘɪɴɢᴜɪɴᴅᴀᴠᴇ's ꜰʟᴜss" with lore "&7&o(Linksklick)"
+		set slot 27 of {_gui} to spruce sign named formatted "<##f03a1a>sᴄʜʟɪᴇssᴇɴ" with lore "&7&o(Linksklick)"
+		set slot 35 of {_gui} to knowledge book named formatted "<##3af2b5>ɢᴇᴘʟᴀɴᴛᴇ ᴇᴠᴇɴᴛs" with lore "%nl%&8&m-------------------&r%nl%&eWeinachten &7&o(Aktuell Aktiv) &8» &b1.12 &8- &b27.12%nl%&eNeujahr &8» &b31.12.22 &8- &b3.1.23%nl%&8&m-------------------&r"
+		open {_gui} to player
+
+on inventory click:
+	if event-inventory's display name contains "ᴡᴀʀᴘs":
+		cancel event
+		if clicked slot is 11:
+			cancel event
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+			wait 1 second
+			make console execute command "execute in minecraft:overworld run tp %player% -282.70 85.00 1800.51 -449.86 -0.15"
+			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+			close player's inventory
+		if clicked slot is 12:
+			cancel event
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+			wait 1 second
+			make console execute command "execute in minecraft:overworld run tp %player% -318.70 46.00 1778.39 -89.11 0.15"
+			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+			close player's inventory
+		if clicked slot is 14:
+			cancel event
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+			wait 1 second
+			make console execute command "execute in minecraft:overworld run tp %player% -55.61 70.00 -8.30 -178.36 6.75"
+			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+			close player's inventory
+		if clicked slot is 15:
+			cancel event
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+			wait 1 second
+			make console execute command "execute in minecraft:overworld run tp %player% -348.70 92.00 1840.49 -1168.66 2.70"
+			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+			close player's inventory
+		if clicked slot is 23:
+			cancel event
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+			wait 1 second
+			make console execute command "execute in minecraft:overworld run tp %player% -288.42 80.00 1904.37 -1079.84 5.18"
+			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+			close player's inventory
+		if clicked slot is 27:
+			cancel event
+			close player's inventory
+		if clicked slot is 35:
+			cancel event
+
+command /kalender:
+	trigger:
+		make player execute command "/christmascalendar open"
