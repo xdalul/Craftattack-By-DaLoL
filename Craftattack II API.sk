@@ -698,6 +698,7 @@ command /sethome <text> <text>:
 
 command /home:
 	trigger:
+		set {home.open.%player%} to true
 		set {_gui} to a new chest inventory with 3 row with name formatted "<##ff2200>ʜᴏᴍᴇs"
 		if {1.home.%player%} is not set:
 			set slot 11 of {_gui} to red stained glass pane named formatted "<##ff2693>ᴋᴇɪɴ ʜᴏᴍᴇ!" with lore "ᴅɪᴇsᴇʀ ʜᴏᴍᴇ ᴡᴜʀᴅᴇ%nl%ɴᴏᴄʜ ɴɪᴄʜᴛ ɢᴇsᴇᴛᴢᴛ."
@@ -716,42 +717,50 @@ command /home:
 
 on inventory click:
 	if event-inventory's display name contains "ʜᴏᴍᴇs":
-		if clicked slot is 11:
-			if {1.home.%player%} is not set:
+		if {home.open.%player%} is set:
+			if clicked slot is 11:
+				if {1.home.%player%} is not set:
+					cancel event
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+				else:
+					cancel event
+					delete {home.open.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+					close player's inventory
+					wait 1 second
+					teleport player to {first.home.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+			if clicked slot is 13:
+				if {2.home.%player%} is not set:
+					cancel event
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+				else:
+					cancel event
+					delete {home.open.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+					close player's inventory
+					wait 1 second
+					teleport player to {second.home.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+			if clicked slot is 15:
+				if {3.home.%player%} is not set:
+					cancel event
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
+				else:
+					cancel event
+					delete {home.open.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
+					close player's inventory
+					wait 1 second
+					teleport player to {third.home.%player%}
+					send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
+			if clicked slot is 18:
 				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
-			else:
-				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
-				close player's inventory
-				wait 1 second
-				teleport player to {first.home.%player%}
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
-		if clicked slot is 13:
-			if {2.home.%player%} is not set:
-				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
-			else:
-				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
-				close player's inventory
-				wait 1 second
-				teleport player to {second.home.%player%}
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
-		if clicked slot is 15:
-			if {3.home.%player%} is not set:
-				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Du musst zuerst ein Home setzen um es zu verwenden."
-			else:
-				cancel event
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &7Teleportiere..."
-				close player's inventory
-				wait 1 second
-				teleport player to {third.home.%player%}
-				send formatted "&8[<##ff2200>ʜᴏᴍᴇs&8] &aDu wurdest erfolgreich Teleportiert!"
-		if clicked slot is 18:
-			cancel event
-			close player's inventory 
+				delete {home.open.%player%}
+				close player's inventory 
+		else:
+			send "&8[<##ff2200>ʜᴏᴍᴇs&8] &cEs ist ein Fehler aufgetreten!"
+
 
 command /delhome <text>:
 	trigger:
@@ -800,6 +809,7 @@ command /warps:
 	cooldown: 15 seconds
 	cooldown message: &8[<##ff003c>ᴡᴀʀᴘs&8] &cDieser Befehl hat einen 15 Sekunden Cooldown!
 	trigger:
+		set {warps.open.%player%} to true
 		set {_gui} to a new chest inventory with 4 row with name formatted "<##D6FF00>ᴡᴀʀᴘs"
 		set slot 11 of {_gui} to skull of "Jeeequeue" parsed as offline player named formatted "<##ff3300>ᴊᴇᴇᴇǫᴜᴇᴜᴇ" with lore "&7&o(Linksklick)"
 		set slot 12 of {_gui} to skull of "VBaggy" parsed as offline player named formatted "<##55b6f2>ʙᴀɢɢʏ & ᴛɪɴɢʟʏ" with lore "&7&o(Linksklick)"
@@ -813,47 +823,50 @@ command /warps:
 on inventory click:
 	if event-inventory's display name contains "ᴡᴀʀᴘs":
 		cancel event
-		if clicked slot is 11:
+		if {warps.open.%player%} is set:
 			cancel event
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
-			wait 1 second
-			make console execute command "execute in minecraft:overworld run tp %player% -282.70 85.00 1800.51 -449.86 -0.15"
-			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
-			close player's inventory
-		if clicked slot is 12:
-			cancel event
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
-			wait 1 second
-			make console execute command "execute in minecraft:overworld run tp %player% -318.70 46.00 1778.39 -89.11 0.15"
-			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
-			close player's inventory
-		if clicked slot is 14:
-			cancel event
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
-			wait 1 second
-			make console execute command "execute in minecraft:overworld run tp %player% -55.61 70.00 -8.30 -178.36 6.75"
-			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
-			close player's inventory
-		if clicked slot is 15:
-			cancel event
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
-			wait 1 second
-			make console execute command "execute in minecraft:overworld run tp %player% -348.70 92.00 1840.49 -1168.66 2.70"
-			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
-			close player's inventory
-		if clicked slot is 23:
-			cancel event
-			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
-			wait 1 second
-			make console execute command "execute in minecraft:overworld run tp %player% -288.42 80.00 1904.37 -1079.84 5.18"
-			send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
-			close player's inventory
-		if clicked slot is 27:
-			cancel event
-			close player's inventory
-		if clicked slot is 35:
-			cancel event
-
+			if clicked slot is 11:
+				cancel event
+				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+				wait 1 second
+				make console execute command "execute in minecraft:overworld run tp %player% -282.70 85.00 1800.51 -449.86 -0.15"
+				send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+				close player's inventory
+			if clicked slot is 12:
+				cancel event
+				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+				wait 1 second
+				make console execute command "execute in minecraft:overworld run tp %player% -318.70 46.00 1778.39 -89.11 0.15"
+				send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+				close player's inventory
+			if clicked slot is 14:
+				cancel event
+				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+				wait 1 second
+				make console execute command "execute in minecraft:overworld run tp %player% -55.61 70.00 -8.30 -178.36 6.75"
+				send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+				close player's inventory
+			if clicked slot is 15:
+				cancel event
+				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+				wait 1 second
+				make console execute command "execute in minecraft:overworld run tp %player% -348.70 92.00 1840.49 -1168.66 2.70"
+				send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+				close player's inventory
+			if clicked slot is 23:
+				cancel event
+				send "&8[<##ff003c>ᴡᴀʀᴘs&8] &7Teleportiere..."
+				wait 1 second
+				make console execute command "execute in minecraft:overworld run tp %player% -288.42 80.00 1904.37 -1079.84 5.18"
+				send formatted "&8[<##ff003c>ᴡᴀʀᴘs&8] &aDu wurdest erfolgreich Teleportiert!"
+				close player's inventory
+			if clicked slot is 27:
+				cancel event
+				close player's inventory
+			if clicked slot is 35:
+				cancel event
+		else:
+			send "&8[<##ff003c>ᴡᴀʀᴘs&8] &cEs ist ein Fehler aufgetreten!"
 command /kalender:
 	trigger:
 		make player execute command "/christmascalendar open"
