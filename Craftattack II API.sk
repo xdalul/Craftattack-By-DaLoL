@@ -60,7 +60,7 @@ command /status [<text>] [<text>]:
 				make console execute command "lp user %player% meta setprefix 100 ""&f[&6Kopfgeldjäger&f]"""
 				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
 			if arg-1 is "event":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aE&dV&bE&9N&3T&f] 
+				make console execute command "lp user %player% meta setprefix 100 ""&f[&aE&dV&bE&9N&3T&f]"""
 				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
 			if arg-1 is "traveling":
 				make console execute command "lp user %player% meta setprefix 100 ""&f[&aTraveling&f] &7"""
@@ -300,13 +300,6 @@ command /gm <text>:
 			send "<##BCFFF8>Du hast dein Spielmodus zu Überlebensmodus geändert."
 
 
-command /nick <text>:
-	usage: <##D6FF00>⚠ Bitte gebe ein Namen an.
-	trigger:
-		if arg-1 contains "hurensohn", "hs", "fick", "ficken" or "sex":
-			send formatted "<##D6FF00>⚠ Du darfst nicht diesen Namen benutzen!"
-		else:
-			set player's displayname to "%the 1st argument%"
 
 command /mülleimer:
 	aliases: müll
@@ -352,11 +345,6 @@ command /afk:
 			broadcast formatted "<##BCFFF8>%player% ist nun nicht mehr abwesend."
 			send formatted "<##BCFFF8>Du bist nun nicht mehr abwesend makiert."
 			stop
-
-on any move:
-	if {afk.%player%} is true:
-		broadcast formatted "<##BCFFF8>%player% ist nun nicht mehr abwesend."
-		delete {afk.%player%}
 
 on chat:
 	if {afk.%player%} is true:
@@ -447,7 +435,6 @@ command /rang [<text>]:
 			send formatted "&8&m               &8[<##FF22CC>Ränge&8]&m               "
 		if arg-1 is "administrator" or "admin":
 			send formatted "<##BCFFF8>Du bist nun Admin!"
-			make console execute command "lp user %player% meta setprefix ""&##ff4b00A&#ff4508d&##ff3f10m&##ff3818i&##ff3220n&##ff2c28i&##ff2630s&##ff1f37t&##ff193fr&##ff1347a&##ff0d4ft&##ff0657o&##ff005fr&8| &7"""
 		if arg-1 is "supporter" or "support":
 			send formatted "<##BCFFF8>Du bist nun Supporter!"
 			make console execute command "lp user %player% meta setprefix ""&bSupporter &8| &7"""
