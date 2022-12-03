@@ -212,6 +212,7 @@ command /lastupdate:
 		send formatted "&8&m     &8[<##B572FF>Last Updates&8]&m     "
 
 command /adminmode:
+	permission: admin
 	trigger:
 		if {admin.%player%} is not set:
 			set player's gamemode to creative
