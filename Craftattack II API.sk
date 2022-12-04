@@ -2,6 +2,7 @@
 
 options:
 	perm: <##D6FF00>⚠ Du hast keine Berechtigungen für diesen Befehl!
+	status: &8[<##4578de>Status&8]
 
 
 # Error Farbe: D6FF00
@@ -11,136 +12,31 @@ options:
 # Wartung-Disconnect Farben: 
 
 
-command /status [<text>] [<text>]:
-	trigger:
-		if player is in world "world" or "world_nether" or "world_the_end":
-			if arg-1 is "live":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&9LIVE&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "record":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&cREC&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "police":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&bPOLIZEI&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "redstone":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&4REDSTONE&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "goblin":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&2GOBLIN&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "afk":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&8AFK&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "boom":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&4BOOM&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "god":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&6GOD&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "engel":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[ENGEL] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "rp" or "roleplay":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&dRP&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "friendly":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aFriendly&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "evil":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&4Evil&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "idiot":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&dIdiot&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "mörder":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&0Mörder&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "kopfgeldjäger":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&6Kopfgeldjäger&f]"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "event":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aE&dV&bE&9N&3T&f]"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "traveling":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aTraveling&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "geilo":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&eGEILO&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "pepega":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aPepega&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "king":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&e&lKING&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "pinguin":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&bPinguin&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "legende":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&eLegende&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "insimodus":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&6Insi-Modus&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "smash":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&aSmash&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "ghg":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&5GHG&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert"
-			if arg-1 is "wanted":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&cWANTED&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert."
-			if arg-1 is "elite":
-				make console execute command "lp user %player% meta setprefix 100 ""&f[&eElite&f] &7"""
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich geändert."
-			if arg-1 is "off":
-				make console execute command "lp user %player% meta removeprefix 100"
-				send formatted "<##DFFFF6>Dein Status wurde erfolgreich Entfernt."
-			if arg-1 is not set:
-				send formatted "<##D6FF00>/status help 1 für Hilfe."
-			if arg-1 is "help":
-				if arg-2 is "1":
-					send "&8---[&6Statuse Seite 1&8]---"
-					send "&7live: &f[&9LIVE&f]"
-					send "&7record: &f[&cREC&f]"
-					send "&7police: &f[&bPOLIZEI&f]"
-					send "&7redstone: &f[&4REDSTONE&f]"
-					send "&7goblin: &f[&2GOBLIN&f]"
-					send "&7afk: &f[&8AFK&f]"
-					send "&7boom: &f[&4BOOM&f]"
-					send "&7god: &f[&6GOD&f]"
-					send "&7engel: &f[ENGEL]"
-					send "&7rp, roleplay: &f[&dRP&f]"
-					send "&7friendly: &f[&aFriendly&f]"
-					send "&7evil: &f[&4Evil&f]"
-					send "&7idiot: &f[&dIdiot&f]"
-					send "&7&oNächste seite &9- &e/status help 2"
-					send "&8---[&6Statuse Seite 1&8]---"
-				if arg-2 is "2":
-					send "&8---[&6Statuse Seite 2&8]---"
-					send "&7kriminell: &f[&4KRIMINELL&f]"
-					send "&7mörder: &f[&0Mörder&f]"
-					send "&7kopfgeldjäger: &f[&6Kopfgeldjäger&f]"
-					send "&7event: &f[&aE&dV&bE&9N&3T&f]"
-					send "&7traveling: &f[&aTraveling&f]"
-					send "&7geilo: &f[&eGEILO&f]"
-					send "&7anarchy: &f[&4&lAnarchy&f]"
-					send "&7pepega: &f[&aPepega&f]"
-					send "&7king: &f[&e&lKING&f]"
-					send "&7pinguin: &f[&bPinguin&f]"
-					send "&7legende: &f[&eLegende&f]"
-					send "&7insimodus: &f[&6Insi-Modus&f]"
-					send "&7smash: &f[&aSmash&f]"
-					send "&8---[&6Statuse Seite 2&8]---"
-				if arg-2 is "3":
-					send "&8---[&6Statuse Seite 3&8]---"
-					send "&7GHG: &f[&5GHG&f]"
-					send "&7Wanted: &f[&cWANTED&f]"
-					send "&7Elite: &f[&eElite&f]"
-					send "&8---[&6Statuse Seite 3&8]---"
-
+command /status [<text>]:
+    trigger:
+        if arg-1 is set:
+            send formatted "{@status} <##9cfffc>Dein Status wurde auf &8[%arg-1%&8] <##9cfffc>gesetzt."
+            set {srl.%player%} to arg-1
+            set {status.%player%} to arg-1
+            make console execute command "lp user %player% meta setprefix 100 ""&8[%arg-1%&8]&r &7"""
+        if arg-1 is not set:
+            send formatted "{@status} &f&lHier ne kleine Hilfe für die Color Codes:"
+            send formatted "{@status} &4Dunkel Rot &8- &7& 4"
+            send formatted "{@status} &cRot &8- &7& c"
+            send formatted "{@status} &6Gold &8- &7& 6"
+            send formatted "{@status} &eGelb &8- &7& e"
+            send formatted "{@status} &2Dunkel Grün &8- &7& 2"
+            send formatted "{@status} &aGrün &8- &7& a"
+            send formatted "{@status} &bAqua &8- &7& b"
+            send formatted "{@status} &3Türkis &8- &7& 3"
+            send formatted "{@status} &1Dunkel Blau &8- &7& 1"
+            send formatted "{@status} &9Blau &8- &7& 9"
+            send formatted "{@status} &dPink &8- &7& d"
+            send formatted "{@status} &5Lila &8- &7& 5"
+            send formatted "{@status} &fWeiß &8- &7& f"
+            send formatted "{@status} &7Grau &8- &7& 7"
+            send formatted "{@status} &8Dunkel Grau &8- &7& 8"
+            send formatted "{@status} &f&lAchtung: Alle Color Codes werden zusammen geschrieben nicht so wie hier."
 command /wiki:
 	trigger:
 		send formatted "<##DFFFF6>Craftattack Wiki: &nhttps://bit.ly/craftattack-wiki"
@@ -479,6 +375,7 @@ command /tpa <text> <player>:
 		if arg-1 is "send":
 			if arg-2 is set:
 				send formatted "&8[&bTPA&8] <##BCFFF8>Du hast %arg-2% eine TPA-Anfrage gesendet." to player
+				set {tpa.open.%player%} to true
 				set {tpa.%player%} to true
 				set {tpa.Spieler} to "%player%"
 				set {_gui} to a new chest inventory with 3 row with name formatted "<##ff2200>ᴛᴘᴀ ᴠᴏɴ %player%"
@@ -505,21 +402,26 @@ command /tpa <text> <player>:
 
 on inventory click:
 	if event-inventory's display name contains "ᴛᴘᴀ ᴠᴏɴ":
-		if clicked slot is 11:
+		if {tpa.open.%player%} is set:
 			cancel event
-			make player execute command "/tpa accept %{tpa.spieler}%"
-			delete {tpa.spieler}
-			close player's inventory
-		if clicked slot is 15:
-			cancel event
-			make player execute command "/tpa deny %{tpa.spieler}%"
-			delete {tpa.spieler}
-			close player'S inventory
-		if clicked slot is 18:
-			cancel event
-			close player's inventory
-			make player execute command "/tpa deny %{tpa.spieler}%"
-			delete {tpa.spieler}
+			if clicked slot is 11:
+				cancel event
+				make player execute command "/tpa accept %{tpa.spieler}%"
+				delete {tpa.spieler}
+				delete {tpa.open.%player%}
+				close player's inventory
+			if clicked slot is 15:
+				cancel event
+				make player execute command "/tpa deny %{tpa.spieler}%"
+				delete {tpa.spieler}
+				close player'S inventory
+				delete {tpa.open.%player%}
+			if clicked slot is 18:
+				cancel event
+				close player's inventory
+				make player execute command "/tpa deny %{tpa.spieler}%"
+				delete {tpa.spieler}
+				delete {tpa.open.%player%}
 
 
 command /start:
