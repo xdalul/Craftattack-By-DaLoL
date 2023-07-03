@@ -1,0 +1,640 @@
+#Ist noch nen altes skript... kann viel sachen drinne haben die ich selber scheiße gemacht hab...
+
+# Normale Farbe: DFFFF6
+# Wartungsarbeiten Text Farben: C60000
+ 
+
+on server ping:
+	if {wartung} is not set:
+		if {april.fools} is set:
+			set motd to "             §x§f§b§9§0§9§0K§x§e§d§9§9§8§ar§x§d§f§a§2§8§4a§x§d§1§a§b§7§ef§x§c§2§b§4§7§8t§x§b§4§b§d§7§2a§x§a§6§c§7§6§ct§x§9§8§d§0§6§6t§x§8§a§d§9§6§0a§x§7§c§e§2§5§ac§x§6§d§e§b§5§4k§x§5§f§f§4§4§ee §x§5§1§f§d§4§83 §8| §b1.1§k9.3+§r%nl%               §6⚠ §x§c§a§c§a§f§ba§x§d§0§c§6§f§3P§x§d§5§c§2§e§br§x§d§b§b§f§e§4I§x§e§1§b§b§d§cl §x§e§6§b§7§d§4f§x§e§c§b§3§c§cO§x§f§2§b§0§c§5o§x§f§7§a§c§b§dL§x§f§d§a§8§b§5s §6⚠"
+		else:
+			set motd to "             §x§f§4§4§3§0§1§lC§x§f§5§3§d§1§4§lr§x§f§6§3§7§2§6§la§x§f§7§3§1§3§9§lf§x§f§8§2§b§4§c§lt§x§f§9§2§5§5§f§la§x§f§a§1§e§7§1§lt§x§f§b§1§8§8§4§lt§x§f§c§1§2§9§7§la§x§f§d§0§c§a§a§lc§x§f§e§0§6§b§c§lk §x§f§f§0§0§c§f§l3 &8| <##94ffeb>1.19.3+%nl%             §b⌚ Ende in %{timer.hour}%h %{timer.min}%m %{timer.sek}%s ⌚"
+	if {wartung} is true:
+		set motd to "             §x§f§4§4§3§0§1§lC§x§f§5§3§d§1§4§lr§x§f§6§3§7§2§6§la§x§f§7§3§1§3§9§lf§x§f§8§2§b§4§c§lt§x§f§9§2§5§5§f§la§x§f§a§1§e§7§1§lt§x§f§b§1§8§8§4§lt§x§f§c§1§2§9§7§la§x§f§d§0§c§a§a§lc§x§f§e§0§6§b§c§lk §x§f§f§0§0§c§f§l3 §8| §b1.19.3+§r%nl%           §x§0§0§f§b§a§8W§x§0§9§f§3§a§ca§x§1§2§e§a§b§0r§x§1§b§e§2§b§4t§x§2§4§d§9§b§7u§x§2§d§d§1§b§bn§x§3§6§c§8§b§fg§x§3§f§c§0§c§3s§x§4§8§b§7§c§7a§x§5§1§a§f§c§br§x§5§a§a§6§c§fb§x§6§3§9§e§d§3e§x§6§c§9§5§d§6i§x§7§5§8§d§d§at§x§7§e§8§4§d§ee§x§8§7§7§c§e§2n §x§9§0§7§3§e§6- §x§9§9§6§b§e§aC§x§a§2§6§2§e§eA §x§a§b§5§a§f§1E§x§b§4§5§1§f§5n§x§b§d§4§9§f§9d§x§c§6§4§0§f§de"
+
+#-------------------------------------------[Öffentliche Commands / Benutzbar für die Öffentlichkeit]---------------------------------------
+
+command /status [<text>] [<text>]:
+	trigger:
+		if {april.fools} is set:
+			send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] §c e e e e Err orr..."
+		else:
+			if arg-1 is "set":
+				if arg-2 is set:
+					if {pro::%player%} is not set:
+						make console execute command "lp user %player% meta setprefix 100 ""&8[%arg-2%&8] &7"""
+						send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] <##DFFFF6>Du hast dein Status erfolgreich zu &8[&r%arg-2%&8] <##DFFFF6> gesetzt."
+						set {status.%player%} to arg-2
+					if {pro::%player%} is true:
+						make console execute command "lp user %player% meta setprefix 100 ""&e⚡ &8[%arg-2%&8] &7"""
+						send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] <##DFFFF6>Du hast dein Status erfolgreich zu &8[&r%arg-2%&8] <##DFFFF6> gesetzt."
+						set {status.%player%} to arg-2
+				if arg-2 is not set:
+					send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] <##D6FF00>Du hast keinen Status gesetzt! Richtige Verwendung → /status set <Color Code & Status>"
+			if arg-1 is "delete":
+				make console execute command "lp user %player% meta removeprefix 100"
+				send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] <##DFFFF6>Du hast deinen Status erfolgreich entfernt."
+			if arg-1 is "help":
+				send "§8[§x§f§b§6§5§6§5S§x§f§b§6§8§5§1t§x§f§c§6§a§3§da§x§f§c§6§d§2§8t§x§f§d§6§f§1§4u§x§f§d§7§2§0§0s§8] <##DFFFF6>Um ein Status zu erstellen nutzt du /status set (Dein Status) um die Farbe zu ändern machst du vor dem Status ein sogennanter Color Code dran so würde es aussehen (& aTest) (&aTest<##DFFFF6>)."
+
+command /warps:
+    trigger:
+        send "<##ff3e30>Diese Funktion wurde deaktiviert da wir langsam das Projekt hier mehr Vanilla (außer die Statuse usw.) zu machen."
+
+command /help:
+    trigger:
+        send "&8&m                    &8[<##D6FF00>Hilfe&8]&m                    "
+        send "<##DFFFF6>/status set (Status) - Setzt dir deinen Custom-Status"
+        send "<##DFFFF6>/status help - Gibt dir Hilfe wie man Statuse macht."
+        send "<##DFFFF6>/status delete - Entfernt deinen Aktuellen Status."
+        send "<##DFFFF6>/warps - Öffnet ein GUI für das Teleportieren zu anderen Basen von Spielern."
+        send "<##DFFFF6>/sethome (Home-Name) - Setzt ein Home bei einem Bestimmten Position."
+        send "<##DFFFF6>/home (Home) - Teleportiert dich zu einem deiner erstellten Homes."
+        send "<##DFFFF6>/delhome (Home) - Löscht einen deiner bestimmten Homes."
+        send "<##DFFFF6>/tpa (send, accept, deny) (Spieler) - Nimmt, lehnt ab oder Aktzeptiert eine TPA von einem Spieler."
+        send "<##DFFFF6>/ping (Spieler) - Zeigt deinen Ping oder der Ping eines Spielers."
+        send "<##DFFFF6>/spawn - Teleportiert dich zum Spawn."
+        send "<##D6FF00>/bauwelt - Teleportiert dich in die Bauwelt."
+        send "<##D6FF00>/bgm - Wechselt deinen Spielmodus in der Bauwelt auf Creative / Survival."
+        send "&8&m                    &8[<##D6FF00>Hilfe&8]&m                    "
+
+command /sethome [<string>]:
+	executable by: players
+	trigger:
+		if arg-1 is set:
+			set {homes::%uuid of player%::%arg-1%} to location of player
+			send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &7Du hast &e%arg-1% &7zu der Koordinate &E%location of player% &7gesetzt."
+		else:
+			set {haupthome::%uuid of player%} to location of player
+			send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &7Du hast dein Haupthome zu der Koordinate &e%location of player% &7gesetzt."
+		
+command /delhome [<string>]:
+	executable by: players
+	trigger:
+		if arg-1 is set:
+			clear {homes::%uuid of player%::%arg-1%}
+			send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &7Du hast den Home &E%arg-1% &7gelöscht."
+		if arg-1 is not set:
+			clear {haupthome::%uuid of player%}
+			send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &7Dein Haupthome wurde gelöscht."
+
+command /home [<string>]:
+	executable by: players
+	trigger:
+		if {april.fools} is set:
+			send "§8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds§8] §7Lauf doch!"
+		else:
+			if arg-1 is set:
+				if {homes::%uuid of player%::%arg-1%} is not set:
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &cDer Home &e""%arg-1%"" &cexistiert laut dem System nicht. Bitte melde dich bei DaLoL falls das ein Fehler ist."
+				else:
+					make console execute command "effect give %player% minecraft:blindness 5 5"
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] <##DFFFF6>Teleportiere..."
+					make console execute command "effect give %player% minecraft:nausea 5 20"
+					wait 4 seconds
+					make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+					teleport player to {homes::%uuid of player%::%arg-1%}
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &7Du wurdest erfolgreich zu den Home &e""%arg-1%""&7 Teleportiert."
+			if arg-1 is not set:
+				if {haupthome::%uuid of player%} is not set:
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &cDu hast noch kein Haupthome, erstelle bitte eins indem du einfach nur /sethome benutzt."
+				if {haupthome::%uuid of player%} is set:
+					make console execute command "effect give %player% minecraft:blindness 5 5"
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] <##DFFFF6>Teleportiere..."
+					make console execute command "effect give %player% minecraft:nausea 5 20"
+					wait 4 seconds
+					make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+					teleport player to {haupthome::%uuid of player%}
+					send "&8[§x§f§b§f§a§7§9H§x§c§c§e§6§9§ao§x§9§e§d§1§b§bm§x§6§f§b§d§d§ce§x§4§0§a§8§f§ds&8] &aDu wurdest erfolgreich zu deinem Haupthome teleportiert."
+
+
+command /tpa [<text>] [<player>]:
+	trigger:
+		if {april.fools} is set:
+			send "§8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA§8] §7Kannst auch alleine auskommen."
+		else:
+			if arg-1 is "send":
+				if arg-2 is set:
+					if {tpa.toggle::%arg-2%} is not set:
+						send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>Du hast %arg-2% eine TPA-Anfrage gesendet." to player
+						set {tpa.%player%} to true
+						set {tpa.Spieler} to "%player%"
+						set {_gui} to a new chest inventory with 3 row with name formatted "<##ff2200>ᴛᴘᴀ ᴠᴏɴ %player%"
+						set slot 11 of {_gui} to green stained glass named formatted "<##00ff0d>ᴀɴɴᴇʜᴍᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+						set slot 15 of {_gui} to red stained glass named formatted "<##ff0022>ᴀʙʟᴇʜɴᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+						set slot 18 of {_gui} to spruce sign named formatted "<##f03a1a>sᴄʜʟɪᴇssᴇɴ & ᴀʙʟᴇʜɴᴇɴ" with lore "&7&o(ʟɪɴᴋsᴋʟɪᴄᴋ)"
+						open {_gui} to arg-2 
+					else:
+						send "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] &cDiesem Spieler kannst du keine TPA senden."
+			if arg-1 is "accept":
+				if {tpa.%arg-2%} is true:
+					if arg-2 is set:
+						send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>Du hast die TPA-Anfrage von %arg-2% angenommen."
+						send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>%player% hat deine TPA-Anfrage angenommen." to arg-2
+						teleport arg-2 to player
+						set {tpa.%arg-2%} to false
+				else:
+					send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>%arg-2% hat dir keine TPA-Anfrage gesendet!"
+			if arg-1 is "deny":
+				if {tpa.%arg-2%} is true:
+					if arg-2 is set:
+						send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>Du hast die TPA-Anfrage von %arg-2% abgelehnt."
+						send formatted "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] <##BCFFF8>%player% hat deine TPA-Anfrage abgelehnt." to arg-2
+						set {tpa.%arg-2%} to false
+
+command /tpatoggle:
+	trigger:
+		if {tpa.toggle::%player%} is set:
+			delete {tpa.toggle::%player%}
+			send "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] &cDu hast dein Tpa-Toggle ausgeschaltet."
+			stop
+		if {tpa.toggle::%player%} is not set:
+			set {tpa.toggle::%player%} to true
+			send "&8[§x§0§1§f§b§b§8T§x§7§f§d§8§d§2P§x§f§d§b§5§e§bA&8] &aDu hast dein Tpa-Toggle eingeschaltet, nun kann dir keiner eine TPA senden."
+			stop
+			
+ 
+
+on inventory click:
+	if event-inventory's display name contains "ᴛᴘᴀ ᴠᴏɴ":
+		if clicked slot is 11:
+			cancel event
+			make player execute command "/tpa accept %{tpa.spieler}%"
+			delete {tpa.spieler}
+			close player's inventory
+		if clicked slot is 15:
+			cancel event
+			make player execute command "/tpa deny %{tpa.spieler}%"
+			delete {tpa.spieler}
+			close player'S inventory
+		if clicked slot is 18:
+			cancel event
+			close player's inventory
+			make player execute command "/tpa deny %{tpa.spieler}%"
+			delete {tpa.spieler}
+
+
+
+command /spawn:
+	trigger:
+		if {april.fools} is set:
+			send "§8[§x§4§5§f§b§e§0S§x§7§3§f§a§d§7p§x§a§1§f§8§c§ea§x§c§f§f§7§c§5w§x§f§d§f§5§b§cn§8] §7Okay den Command darfst du benutzen <3"
+			wait 2 seconds
+			make console execute command "effect give %player% minecraft:blindness 5 5"
+			send "&8[§x§4§5§f§b§e§0S§x§7§3§f§a§d§7p§x§a§1§f§8§c§ea§x§c§f§f§7§c§5w§x§f§d§f§5§b§cn&8] <##DFFFF6>Teleportiere..."
+			make console execute command "effect give %player% minecraft:nausea 5 20"
+			wait 4 seconds
+			make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+			make console execute command "execute in minecraft:overworld run tp %player% 3.44 182.00 -269.47 -1673.89 -4.19"
+			set player's gamemode to survival
+			send "&8[§x§4§5§f§b§e§0S§x§7§3§f§a§d§7p§x§a§1§f§8§c§ea§x§c§f§f§7§c§5w§x§f§d§f§5§b§cn&8] <##DFFFF6>Du wurdest erfolgreich zum Spawn Teleportiert."
+			delete {bw.gamemode::%player%}
+		else:
+			make console execute command "effect give %player% minecraft:blindness 5 5"
+			send "&8[§x§4§5§f§b§e§0S§x§7§3§f§a§d§7p§x§a§1§f§8§c§ea§x§c§f§f§7§c§5w§x§f§d§f§5§b§cn&8] <##DFFFF6>Teleportiere..."
+			make console execute command "effect give %player% minecraft:nausea 5 20"
+			wait 4 seconds
+			make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+			make console execute command "execute in minecraft:overworld run tp %player% 3.44 182.00 -269.47 -1673.89 -4.19"
+			set player's gamemode to survival
+			send "&8[§x§4§5§f§b§e§0S§x§7§3§f§a§d§7p§x§a§1§f§8§c§ea§x§c§f§f§7§c§5w§x§f§d§f§5§b§cn&8] <##DFFFF6>Du wurdest erfolgreich zum Spawn Teleportiert."
+			delete {bw.gamemode::%player%}
+
+
+
+
+command /ping [<player>]:
+	trigger:
+		if arg-1 is not set:
+			send "&8[§x§f§b§1§0§9§6P§x§b§a§5§5§b§8i§x§7§a§9§b§d§bn§x§3§9§e§0§f§dg&8] <##DFFFF6>Dein Ping → &e%player's ping%ms"
+		if arg-1 is set:
+			send "&8[§x§f§b§1§0§9§6P§x§b§a§5§5§b§8i§x§7§a§9§b§d§bn§x§3§9§e§0§f§dg&8] <##DFFFF6>%arg-1%'s Ping → &e%arg-1's ping%ms"
+
+command /umfrage <text>:
+	usage: &8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7Richtige benutzung -> &E&n/umfrage <Nachricht>
+	permission: umfrage.admin
+	trigger:
+		set {umfrage::true} to true
+		broadcast "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7%arg-1% %nl%&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &a<tooltip:&aKlicke hier für Ja><command:/ja>Ja <reset>&8| <tooltip:&cKlicke hier für Nein><command:/nein>&cNein<reset>%nl%&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7&oBitte Klickt auf das was ihr wählen möchtet."
+		wait 30 seconds
+		broadcast "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7Das Ergebnis ist: &a%{umfrage.ja}% für Ja &8| &c%{umfrage.nein}% für Nein."
+		delete {umfrage.ja}
+		delete {umfrage.nein}
+		delete {umfrage::true}
+		loop all players:
+			set {umfrage.%uuid of loop-player%} to false
+
+
+command /ja:
+	trigger:
+		if {umfrage.%uuid of player%} is false:
+			if {umfrage::true} is true:
+				add 1 to {umfrage.ja}
+				send "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7Du hast erfolgreich für &aJa &7abgestimmt."
+				set {umfrage.%uuid of player%} to true
+			if {umfrage::true} is not set:
+				send "&8[§x§f§b§0§0§0§0F§x§f§b§1§6§1§6e§x§f§c§2§c§2§ch§x§f§c§4§2§4§2l§x§f§d§5§8§5§8e§x§f§d§6§e§6§er&8] &7Es läuft aktuell keine Umfrage."
+		else:
+			send "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee8] &7Du kannst nicht mehrmals &aJa &7abstimmen."
+
+command /nein:
+	trigger:
+		if {umfrage.%uuid of player%} is false:
+			if {umfrage::true} is true:
+				add 1 to {umfrage.nein}
+				send "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7Du hast erfolgreich für &cNein &7abgestimmt."
+				set {umfrage.%uuid of player%} to true
+			if {umfrage::true} is not set:
+				send "&8[§x§f§b§0§0§0§0F§x§f§b§1§6§1§6e§x§f§c§2§c§2§ch§x§f§c§4§2§4§2l§x§f§d§5§8§5§8e§x§f§d§6§e§6§er&8] &7Es läuft aktuell keine Umfrage."
+		else:
+			send "&8[§x§d§0§f§b§0§0U§x§d§8§e§4§1§2m§x§d§f§c§c§2§5f§x§e§7§b§5§3§7r§x§e§e§9§d§4§9a§x§f§6§8§6§5§cg§x§f§d§6§e§6§ee&8] &7Du kannst nicht mehrmals &cNein &7abstimmen."
+
+
+
+command /strike <offlineplayer> <text>:
+	permission: dalol.strike
+	permission message: &8[&cOwner-Tools&8] <##DFFFF6>Auf diesem Befehl hast du kein Zugriff drauf.
+	trigger:
+		if {strikes::%arg-1%} is not set:
+			add 1 to {strikes::%arg-1%}
+			send "&8[&cOwner-Tools&8] <##DFFFF6>Du hast den Admin &E""%arg-1%"" <##DFFFF6>gestriked wegen &e""%arg-2%"""
+			send "&8[<##f0483c>Warnung&8] <##DFFFF6>Du hast einen Strike bekommen wegen %arg-2%. Deine Aktuelle anzahl an Strikes enthält %{strikes::%arg-1%}%, falls du über 3 Strikes hast bekommst du 1 Tag auszeit." to arg-1
+			stop
+		if {strikes::%arg-1%} is less than 3:
+			add 1 to {strikes::%arg-1%}
+			send "&8[&cOwner-Tools&8] <##DFFFF6>Du hast den Admin &E""%arg-1%"" <##DFFFF6>gestriked wegen &e""%arg-2%"""
+			send "&8[<##f0483c>Warnung&8] <##DFFFF6>Du hast einen Strike bekommen wegen %arg-2%. Deine Aktuelle anzahl an Strikes enthält %{strikes::%arg-1%}%, falls du über 3 Strikes hast bekommst du 1 Tag auszeit." to arg-1
+			stop
+		if {strikes::%arg-1%} is more than 2:
+			send "&8[<##f0483c>Warnung&8] <##DFFFF6>Du hast einen Strike bekommen wegen %arg-2%. Deine Aktuelle anzahl an Strikes enthält %{strikes::%arg-1%}%, leider wirst du gleich in ca. 20 Sekunden für ein Tag gebannt." to arg-1
+			wait 20 seconds
+			kick arg-1 due to "<##DFFFF6>Auszeit%nl%%nl%&7&oGönn dir ne Pause :))%nl%%nl%&c&oSee you Tommorow..."
+			stop
+on death:
+	set {death.loc::%uuid of victim%} to location of victim
+	send "&8[&cDeath&8] &7Du bist gestorben bei der Koordinate &e%{death.loc::%uuid of victim%}%&7." to victim
+	wait 2 seconds
+	delete {death.loc::%uuid of victim%}
+
+command /delstrike <offlineplayer>:
+	permission: dalol.strike
+	permission message: &8[&cOwner-Tools&8] <##DFFFF6>Auf diesem Befehl hast du kein Zugriff drauf.
+	trigger:
+		if {strikes::%arg-1%} is more than 2:
+			delete {strikes::%arg-1%}
+			send "&8[&cOwner-Tools&8] <##DFFFF6>Der Administrator, %arg-1% hat seine Strikes gelöscht bekommen."
+			send "&8[<##f0483c>Information&8] <##DFFFF6>Deine Strikes als Administrator wurden nun gecleared auf 0."
+			stop
+		else:
+			send "&8[&cOwner-Tools&8] <##DFFFF6>Der Administrator, %arg-1% muss zuerst schonmal eine Auszeit gehabt haben um seine Strikes zu entfernen."
+			stop
+command /destrike <player>:
+	trigger:
+		delete {strikes::%arg-1%}
+
+command /kick <player> <text>:
+    permission: admin.kick
+    trigger:
+        kick arg-1 due to "&cDu wurdest gekickt.%nl%%nl%<##DFFFF6>Grund → %arg-2%"
+        send "&8[&cAdmin-Tools&8] <##DFFFF6>Der Spieler %arg-1% wurde erfolgreich wegen %arg-2% gekickt."
+        broadcast "&8[§x§f§b§e§9§0§0K§x§f§c§b§1§4§1i§x§f§c§7§8§8§1c§x§f§d§4§0§c§2k&8] <##FF9898>Der Spieler %arg-1% wurde gekickt wegen %arg-2%."
+
+command /ban <offlineplayer> <text>:
+	permission: admin.ban
+	trigger:
+		if {banned.%arg-1%} is set:
+			send "&8[&cAdmin-Tools&8] <##D6FF00>Dieser Spieler ist schon gebannt."
+		if {banned.%arg-1%} is not set:
+			send "&8[&cAdmin-Tools&8] <##DFFFF6>Der Spieler %arg-1% wurde gebannt wegen %arg-2%"
+			set {banned.%arg-1%} to true
+			set {ban.reason.%arg-1%} to arg-2
+			kick arg-1 due to "<##FF9898>Du wurdest temporär gebannt.%nl%%nl%<##DFFFF6>Grund → %arg-2%"
+
+on join:
+    if {banned.%player%} is true:
+        kick player due to "<##FF9898>Du wurdest temporär gebannt.%nl%%nl%<##DFFFF6>Grund → %{ban.reason.%player%}%"
+    
+        
+command /unban <offlineplayer>:
+	permission: admin.unban
+	trigger:
+		if {banned.%arg-1%} is not set:
+			send "&8[&cAdmin-Tools&8] <##DFFFF6>Der Spieler ist nicht gebannt."
+		if {banned.%arg-1%} is true:
+			send "&8[&cAdmin-Tools&8] <##DFFFF6>Du hast den Spieler %arg-1% entbannt."
+			delete {banned.%arg-1%}
+			delete {ban.reason.%arg-1%}
+
+command /wartung <text>:
+    permission: admin.wartung
+    trigger:
+        if {wartung} is not set:
+            if arg-1 is "an":
+                send "&8[&cAdmin-Tools&8] <##DFFFF6>Du hast die Wartungsarbeiten für CA 3 gestartet."
+                set {wartung} to true
+                loop all players:
+                    kick loop-player due to "<##FF8700>⚠ Wartungsarbeiten ⚠ %nl%%nl%<##86FFF3>Wir erwarten deine Anreise Bald...%nl%%nl%<##BCFFF8>→ bit.ly/crafattack-discord ←"
+                stop
+        if {wartung} is true:
+            if arg-1 is "aus":
+                send "&8[&cAdmin-Tools&8] <##DFFFF6>Du hast die Wartungsarbeiten für CA 3 gestoppt."
+                delete {wartung}
+                stop
+
+on join:
+	if {wartung} is true:
+		if player don't have permission "wartung.bypass":
+			kick player due to "<##FF8700>⚠ Wartungsarbeiten ⚠ %nl%%nl%<##86FFF3>Wir erwarten deine Anreise Bald...%nl%%nl%<##BCFFF8>→ bit.ly/crafattack-discord ←"
+	if {strikes::%player%} is more than 2:
+		kick player due to "<##DFFFF6>Auszeit%nl%%nl%&7&oGönn dir ne Pause :))%nl%%nl%&c&oSee you Tommorow..."
+
+
+command /invsee <offlineplayer>:
+    permission: admin.invsee
+    trigger:
+        open arg-1's inventory for player
+        send "&8[&cAdmin-Tools&8] &7Du hast das Inventar von %arg-1% geöffnet."
+
+command /commandspy [<player>]:
+	aliases: /commands, /cspy
+	permission: admin.commandspy
+	trigger:
+		if arg 1 is set:
+			if {cs::%uuid of arg 1%} is set:
+				clear {cs::%uuid of arg 1%}
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>CommandSpy wurde für den Spieler %arg-1% deaktiviert."
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>Dein CommandSpy wurde deaktiviert." to arg 1
+			else:
+				set {cs::%uuid of arg 1%} to true
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>Dein Commands-spy wurde aktiviert." to arg 1
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>Commands-spy wurde für den Spieler %arg-1% aktiviert."
+		else:
+			if {cs::%uuid of player%} is set:
+				clear {cs::%uuid of player%}
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>Dein Commands-spy wurde deaktiviert."
+			else:
+				set {cs::%uuid of player%} to true
+				send "&8[&cAdmin-Tools&8] <##DFFFF6>Dein Commands-spy wurde aktiviert."
+on command:
+	if sender is a player:
+		loop all players:
+			if {cs::%uuid of loop-player%} is set:
+				if "%player%" is not "%loop-player%":
+					send "&8[&cAdmin-Tools&8] <##DFFFF6>%player% &8| <##DFFFF6>/%complete command%." to loop-player
+
+command /warn <player> <text>:
+	permission: admin.warn
+	trigger:
+		add 1 to {warns.%arg-1%}
+		send "&8[&cAdmin-Tools&8] <##DFFFF6>Du hast den Spieler %arg-1% gewarnt wegen &c%arg-2%. <##DFFFF6>"
+		set {warn.reason.%arg-1%} to arg-2
+
+command /warns <text> <player>:
+	trigger:
+		if arg-1 is "info":
+			send "&8[&cAdmin-Tools&8] <##DFFFF6>Der Spieler %arg-2% hat %{warns.%arg-1%}% Warns."
+		if arg-1 is "delete":
+			delete {warns.%arg-1%}
+			send "&8[&cAdmin-Tools&8] <##DFFFF6>Du hast die Warns für %arg-2% entfernt."
+
+
+command /arestart:
+	permission: admin.arestart
+	trigger:
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 10 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 9 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 8 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 7 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 6 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 5 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 4 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 3 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 2 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in 1 Sekunden"
+		wait 1 second
+		broadcast "&8[§x§f§b§0§e§7§8N§x§f§1§3§0§8§1e§x§e§7§5§2§8§bu§x§d§d§7§4§9§4s§x§d§3§9§7§9§et§x§c§9§b§9§a§7a§x§b§f§d§b§b§1r§x§b§5§f§d§b§at&8] &7Neustart in kürze..."
+		loop all players:
+			kick loop-player due to "&bDer Server startet kurz neu.%nl%Bitte gedulde dich und komme in ca. 30 Sekunden wieder."
+		make console execute command "restart"
+
+command /src:
+	permission: src.admin
+	trigger:
+		loop all players:
+			if {status.%loop-player%} is set:
+				make loop-player execute command "/status set %{status.%loop-player%}%"
+				send "&8[&B&lSRC&8] &7Alle Statuse wurden erfolgreich für alle Spieler auf dem Server, aktuallisiert." to player
+				send "&8[&6Status&8] &7Dein Status wurde durch den Status-Reload erneut erstellt."
+
+command /vanish:
+	permission: vanish.admin
+	trigger:
+		if {vanish::%player%} is not set:
+			set {vanish::%player%} to true
+			hide player from all players
+			send "&8[§x§f§b§f§8§0§0V§x§c§9§e§2§3§3a§x§9§7§c§c§6§5n§x§6§4§b§7§9§8i§x§3§2§a§1§c§as§x§0§0§8§b§f§dh&8] &7Du bist nun im Vanish."
+			broadcast "%player% hatte kein bock mehr auf CA 3"
+			stop
+		if {vanish::%player%} is true:
+			delete {vanish::%player%}
+			reveal player from all players
+			send "&8[§x§f§b§f§8§0§0V§x§c§9§e§2§3§3a§x§9§7§c§c§6§5n§x§6§4§b§7§9§8i§x§3§2§a§1§c§as§x§0§0§8§b§f§dh&8] &7Du bist nun nicht mehr im Vanish."
+			broadcast "&b%player% hat den Craftattack Server betreten."
+			stop
+
+on every second:
+	loop all players:
+		if {vanish::%loop-player%} is true:
+			set action bar of loop-player to "&8[&6Info&8] &cDu bist im §x§f§b§f§8§0§0V§x§c§9§e§2§3§3a§x§9§7§c§c§6§5n§x§6§4§b§7§9§8i§x§3§2§a§1§c§as§x§0§0§8§b§f§dh§c."
+
+
+command /alert <text>:
+	permission: admin.alert
+	trigger:
+		broadcast "&8[§x§f§f§3§e§9§5W§x§d§5§4§b§a§6a§x§a§a§5§8§b§8r§x§8§0§6§5§c§9n§x§5§5§7§1§d§au§x§2§b§7§e§e§cn§x§0§0§8§b§f§dg&8] &b%arg-1%"
+		loop all players:
+			make console execute command "playsound minecraft:item.goat_horn.sound.2 ambient %loop-player% ~ ~ ~ 20 1.75"
+
+on every second:
+	loop all players:
+		if {april.fools} is set:
+			set tablist header of loop-player to "§x§4§2§b§3§f§bK§x§4§c§b§9§f§4r§x§5§7§b§f§e§ea§x§6§1§c§6§e§7f§x§6§b§c§c§e§0t§x§7§6§d§2§d§aa§x§8§0§d§8§d§3t§x§8§a§d§e§c§ct§x§9§5§e§4§c§6a§x§9§f§e§b§b§fc§x§a§9§f§1§b§8k§x§b§4§f§7§b§2e §x§b§e§f§d§a§b3%nl%%nl%"
+			set tablist footer of loop-player to "%nl%§x§a§3§f§b§0§0p§x§8§c§f§b§1§6e§x§7§4§f§c§2§ce§x§5§d§f§c§4§2p§x§4§6§f§c§5§8o§x§2§f§f§c§6§eH§x§1§7§f§d§8§4e§x§0§0§f§d§9§ay%nl%%nl%       §x§f§b§b§3§f§2I§x§f§b§b§3§f§0c§x§f§b§b§3§e§eh §x§f§b§b§4§e§dv§x§f§b§b§4§e§be§x§f§b§b§4§e§9r§x§f§b§b§4§e§7c§x§f§b§b§5§e§5r§x§f§c§b§5§e§4a§x§f§c§b§5§e§2f§x§f§c§b§5§e§0t§x§f§c§b§5§d§ee §x§f§c§b§6§d§cd§x§f§c§b§6§d§ba§x§f§c§b§6§d§9s §x§f§c§b§6§d§7a§x§f§c§b§7§d§5l§x§f§c§b§7§d§3l§x§f§c§b§7§d§1e§x§f§c§b§7§d§0s §x§f§c§b§8§c§en§x§f§c§b§8§c§ci§x§f§c§b§8§c§ac§x§f§c§b§8§c§8h§x§f§d§b§8§c§7t §x§f§d§b§9§c§5m§x§f§d§b§9§c§3e§x§f§d§b§9§c§1h§x§f§d§b§9§b§fr§x§f§d§b§a§b§e.§x§f§d§b§a§b§c.§x§f§d§b§a§b§a.       "
+		else:
+			set tablist header of loop-player to "                    §7§x§d§9§c§f§f§bC§x§d§d§c§8§f§0r§x§e§0§c§2§e§5a§x§e§4§b§b§d§af§x§e§7§b§4§c§ft§x§e§b§a§e§c§4a§x§e§f§a§7§b§8t§x§f§2§a§0§a§dt§x§f§6§9§9§a§2a§x§f§9§9§3§9§7c§x§f§d§8§c§8§ck                    %nl%%nl%"
+			set tablist footer of loop-player to "%nl%<##34d8eb>ᴛᴘs → %tps%%nl%%nl%§x§c§5§d§c§f§b☄ §x§c§8§d§b§f§aD§x§c§b§d§9§f§9e§x§c§e§d§8§f§8k§x§d§1§d§6§f§7o§x§d§5§d§5§f§5r§x§d§8§d§3§f§4a§x§d§b§d§2§f§3t§x§d§e§d§0§f§2i§x§e§1§c§f§f§1o§x§e§4§c§d§f§0n§x§e§7§c§c§e§fs §x§e§a§c§a§e§eU§x§e§d§c§9§e§dp§x§f§1§c§7§e§bd§x§f§4§c§6§e§aa§x§f§7§c§4§e§9t§x§f§a§c§3§e§8e §x§f§d§c§1§e§7☄"
+
+command /welten:
+	permission: admin.welten
+	trigger:
+		set {_gui} to a new chest inventory with 4 row with name formatted "<##34d8eb>Welten"
+		set {welten.open} to true
+		set slot 4 of {_gui} to grass block named "&aᴏᴠᴇʀᴡᴏʀʟᴅ" with lore "&7&o(Linksklick)"
+		set slot 11 of {_gui} to netherrack named "&cɴᴇᴛʜᴇʀ" with lore "&7&o(Linksklick)"
+		set slot 15 of {_gui} to end portal frame named "&bᴇɴᴅ" with lore "&7&o(Linksklick)"
+		set slot 22 of {_gui} to beacon named "&dᴇᴠᴇɴᴛs" with lore "&7&o(Linksklick)"
+		set slot 27 of {_gui} to spruce sign named "&csᴄʜʟɪᴇßᴇɴ" with lore "&7&o(Linksklick)"
+		open {_gui} to player
+
+on inventory click:
+	if event-inventory's display name contains "Welten":
+		if {welten.open} is set:
+			if clicked slot is 4:
+				cancel event
+				make console execute command "effect give %player% minecraft:blindness 5 5"
+				send "&8[&6Welten&8] <##DFFFF6>Teleportiere..."
+				make console execute command "effect give %player% minecraft:nausea 5 20"
+				wait 4 seconds
+				make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+				make console execute command "execute in minecraft:overworld run tp %player% 3.44 182.00 -269.47 -1673.89 -4.19"
+				send "&8[&6Welten&8] <##DFFFF6>Du wurdest erfolgreich zu der Overworld Teleportiert."
+			if clicked slot is 11:
+				make console execute command "effect give %player% minecraft:blindness 5 5"
+				cancel event
+				send "&8[&6Welten&8] <##DFFFF6>Teleportiere..."
+				make console execute command "effect give %player% minecraft:nausea 5 20"
+				wait 4 seconds
+				make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+				make console execute command "execute in minecraft:the_nether run tp %player% 28.51 110.00 -49.54 89.81 1.35"
+				send "&8[&6Welten&8] <##DFFFF6>Du wurdest erfolgreich zum Nether Teleportiert."
+			if clicked slot is 15:
+				cancel event
+				make console execute command "effect give %player% minecraft:blindness 5 5"
+				send "&8[&6Welten&8] <##DFFFF6>Teleportiere..."
+				make console execute command "effect give %player% minecraft:nausea 5 20"
+				wait 4 seconds
+				make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+				make console execute command "execute in minecraft:the_end run %player% 1.50 90.00 9.36 -187.04 1.12"
+				send "&8[&6Welten&8] <##DFFFF6>Du wurdest erfolgreich zum End Teleportiert."
+			if clicked slot is 22:
+				cancel event
+				make console execute command "effect give %player% minecraft:blindness 5 5"
+				send "&8[&6Welten&8] <##DFFFF6>Teleportiere..."
+				make console execute command "effect give %player% minecraft:nausea 5 20"
+				wait 4 seconds
+				make console execute command "playsound minecraft:entity.enderman.teleport ambient %player% ~ ~ ~ 20 1"
+				make console execute command "execute in minecraft:event run tp %player% 35.71 68.00 124.30 0.00 0.00"
+				set player's gamemode to survival
+				send "&8[&6Welten&8] <##DFFFF6>Du wurdest erfolgreich zu der Event Welt Teleportiert."
+			if clicked slot is 27:
+				cancel event
+				close player's inventory
+
+command /werbung [<text>]:
+	aliases: ad
+	usage: &8[&6Werbung&8] &e/werbung <Dein Werbe-text>
+	trigger:
+		if {april.fools} is set:
+			send "§8[§6§lWerbung§8] §7Wir machen nicht den YT-Move."
+		else:
+			broadcast "&8[&6&lWerbung&8] &7%arg-1% &8(&2%player%&8)"
+
+on join:
+	if player has permission "admin.anticheat":
+		wait 2 seconds
+		send "&8[&6AntiCheat&8] &7Willst du die Alerts vom AntiCheat ausschalten?%nl%&8[&6AntiCheat&8] <command:/alerts>&a&lJa<reset>"
+
+
+command /discord:
+	aliases: dc
+	trigger:
+		send "§8[§x§7§6§a§9§f§fD§x§8§8§a§8§d§di§x§9§b§a§7§b§bs§x§a§d§a§6§9§9c§x§b§f§a§5§7§7o§x§d§2§a§4§5§5r§x§e§4§a§3§3§3d§8] §7<link:https://discord.gg/H6Za9c2uqx>Klicke hier um unseren Discord Server zu betreten."
+
+command /reloadall:
+	permission: admin.reloadall
+	trigger:
+		broadcast "§8» §4Achtung: §cHintergrundsysteme werden live neugestartet. Es kann zu kurzen Verzögerungen verschiedener Aktionen kommen."
+		make console execute command "reload confirm"
+
+command /tc <text>:
+	aliases: teamchat
+	permission: admin.teamchat
+	trigger:
+		loop all players:
+			if loop-player has permission "admin.tc.use":
+				send "§8[§x§f§f§0§b§b§3T§x§f§c§1§1§a§2e§x§f§8§1§7§9§1a§x§f§5§1§d§8§0m§x§f§2§2§3§6§f-§x§e§e§2§9§5§dC§x§e§b§2§f§4§ch§x§e§7§3§5§3§ba§x§e§4§3§b§2§at§8] §cAdmin §8| §c%player% §8» §7%arg-1%" to loop-player
+				stop
+
+command /inhaber <text> <offlineplayer>:
+	permission: inhaber.use
+	trigger:
+		if arg-1 is "set":
+			if arg-2 is set:
+				set {rank.%arg-2%} to "§4Inhaber §8| §c"
+
+command /admin <text> <offlineplayer>:
+	permission: admin.use
+	trigger:
+		if arg-1 is "set":
+			if arg-2 is set:
+				set {rank.%arg-2%} to "§cAdmin §8| §c"
+		if arg-1 is "remove":
+			if arg-2 is set:
+				delete {rank.%arg-2%}
+
+command /köpfe:
+	trigger:
+		if {april.fools} is set:
+			send "§8[§x§b§3§c§e§f§bK§x§c§6§c§1§e§aö§x§d§8§b§5§d§9f§x§e§b§a§8§c§7p§x§f§d§9§b§b§6e§8] §7Dekoration ist überbewertet."
+		else:
+			send "§8[§x§b§3§c§e§f§bK§x§c§6§c§1§e§aö§x§d§8§b§5§d§9f§x§e§b§a§8§c§7p§x§f§d§9§b§b§6e§8] §7Bitte bestätige hiermit, dass du die Köpfe nur zur Dekoration nutzt. §8[§a<tooltip:§aBestätigen><command:/h1smfargt>Akzeptieren<reset>§8]"
+
+command /wiki:
+	trigger:
+		send "§8[§x§f§b§8§b§8§bC§x§e§f§9§3§9§eA §x§e§2§9§b§b§13 §x§d§6§a§3§c§4W§x§c§9§a§a§d§7i§x§b§d§b§2§e§ak§x§b§0§b§a§f§di§8] <tooltip:§x§f§b§8§b§8§bh§x§f§9§8§c§8§dt§x§f§8§8§d§9§0t§x§f§6§8§e§9§2p§x§f§5§8§f§9§5s§x§f§3§9§0§9§7:§x§f§1§9§1§9§a/§x§f§0§9§2§9§c/§x§e§e§9§3§9§ec§x§e§d§9§4§a§1r§x§e§b§9§5§a§3a§x§e§9§9§6§a§6f§x§e§8§9§7§a§8t§x§e§6§9§8§a§ba§x§e§5§9§9§a§dt§x§e§3§9§a§a§ft§x§e§1§9§b§b§2a§x§e§0§9§c§b§4c§x§d§e§9§d§b§7k§x§d§d§9§e§b§9.§x§d§b§9§f§b§cg§x§d§9§a§0§b§ei§x§d§8§a§1§c§0t§x§d§6§a§2§c§3b§x§d§5§a§3§c§5o§x§d§3§a§4§c§8o§x§d§2§a§5§c§ak§x§d§0§a§6§c§c.§x§c§e§a§7§c§fi§x§c§d§a§8§d§1o§x§c§b§a§9§d§4/§x§c§a§a§a§d§6c§x§c§8§a§b§d§9r§x§c§6§a§c§d§ba§x§c§5§a§d§d§df§x§c§3§a§e§e§0t§x§c§2§a§f§e§2a§x§c§0§b§0§e§5t§x§b§e§b§1§e§7t§x§b§d§b§2§e§aa§x§b§b§b§3§e§cc§x§b§a§b§4§e§ek§x§b§8§b§5§f§1-§x§b§6§b§6§f§3w§x§b§5§b§7§f§6i§x§b§3§b§8§f§8k§x§b§2§b§9§f§bi§x§b§0§b§a§f§d/><link:https://craftattack.gitbook.io/craftattack-wiki/>§x§c§7§f§b§d§aK§x§c§3§f§b§d§5l§x§b§f§f§b§d§0i§x§b§b§f§b§c§cc§x§b§8§f§b§c§7k§x§b§4§f§b§c§2e §x§b§0§f§b§b§dh§x§a§c§f§b§b§8i§x§a§8§f§c§b§4e§x§a§4§f§c§a§fr§x§a§0§f§c§a§a, §x§9§c§f§c§a§5u§x§9§9§f§c§a§0m §x§9§5§f§c§9§cz§x§9§1§f§c§9§7u§x§8§d§f§c§9§2m §x§8§9§f§c§8§dW§x§8§5§f§c§8§8i§x§8§1§f§c§8§4k§x§7§e§f§c§7§fi §x§7§a§f§c§7§az§x§7§6§f§c§7§5u §x§7§2§f§c§7§0g§x§6§e§f§d§6§ce§x§6§a§f§d§6§7l§x§6§6§f§d§6§2a§x§6§2§f§d§5§dn§x§5§f§f§d§5§8g§x§5§b§f§d§5§4e§x§5§7§f§d§4§fn§x§5§3§f§d§4§a."
+
+command /h1smfargt:
+	trigger:
+		send "§8[§x§b§3§c§e§f§bK§x§c§6§c§1§e§aö§x§d§8§b§5§d§9f§x§e§b§a§8§c§7p§x§f§d§9§b§b§6e§8] §7Du hast das §x§d§a§c§c§f§bK§x§d§f§c§6§e§fo§x§e§4§c§1§e§2p§x§e§9§b§b§d§6f§x§e§e§b§6§c§am§x§f§3§b§0§b§ee§x§f§8§a§b§b§1n§x§f§d§a§5§a§5ü §7geöffnet."
+		make player execute command "/hdb"
+
+command /aprilfools <text>:
+	permission: admin.fools
+	trigger:
+		if arg-1 is "on":
+			send "§8[§x§f§b§6§d§6§dA§x§f§b§7§7§7§3p§x§f§b§8§1§7§9r§x§f§c§8§b§8§0i§x§f§c§9§5§8§6l §x§f§c§a§0§8§cF§x§f§c§a§a§9§2o§x§f§d§b§4§9§9o§x§f§d§b§e§9§fl§x§f§d§c§8§a§5s§8] §7Du hast das April Fools gestartet :))"
+			set {april.fools} to true
+		if arg-1 is "off":
+			delete {april.fools}
+
+#CA 3 Ende Zeit | Bugfixes + kleine Mini-Adds |
+
+on inventory click:
+	if event-inventory's display name contains "TicTacToe":
+		cancel event
+		send "§cEs ist ein Fehler aufgetreten!"
+
+on join:
+	wait 5 seconds
+	send "§8[§x§f§b§6§5§6§5I§x§e§2§7§4§6§cn§x§c§9§8§3§7§3f§x§b§0§9§3§7§ao§x§9§7§a§2§8§1r§x§7§e§b§1§8§8m§x§6§5§c§0§8§ea§x§4§c§c§f§9§5t§x§3§3§d§f§9§ci§x§1§a§e§e§a§3o§x§0§1§f§d§a§an§8] §7Freitag 18 Uhr beginnt das §4Doomsday§7. Dort habt ihr §ckeine §7Regeln womit ihr sozusagen alls machen könnt was ihr wollt. Ebenfalls Freitags um 15 Uhr starten die §4Wartungsarbeiten§7 für den Welten-Download."
+
+command /motd:
+	permission: admin.check
+	trigger:
+		send "             §x§f§4§4§3§0§1§lC§x§f§5§3§d§1§4§lr§x§f§6§3§7§2§6§la§x§f§7§3§1§3§9§lf§x§f§8§2§b§4§c§lt§x§f§9§2§5§5§f§la§x§f§a§1§e§7§1§lt§x§f§b§1§8§8§4§lt§x§f§c§1§2§9§7§la§x§f§d§0§c§a§a§lc§x§f§e§0§6§b§c§lk §x§f§f§0§0§c§f§l3 §8| §b1.19.3+§r%nl%           §x§0§0§f§b§a§8W§x§0§9§f§3§a§ca§x§1§2§e§a§b§0r§x§1§b§e§2§b§4t§x§2§4§d§9§b§7u§x§2§d§d§1§b§bn§x§3§6§c§8§b§fg§x§3§f§c§0§c§3s§x§4§8§b§7§c§7a§x§5§1§a§f§c§br§x§5§a§a§6§c§fb§x§6§3§9§e§d§3e§x§6§c§9§5§d§6i§x§7§5§8§d§d§at§x§7§e§8§4§d§ee§x§8§7§7§c§e§2n §x§9§0§7§3§e§6- §x§9§9§6§b§e§aC§x§a§2§6§2§e§eA §x§a§b§5§a§f§1E§x§b§4§5§1§f§5n§x§b§d§4§9§f§9d§x§c§6§4§0§f§de"
+
+
+on every second:
+    if {doomsday.vorbereitung} is set:
+        remove 1 from {timer.sek} 
+        if {timer.sek} is less than 1:
+            set {timer.sek} to 59
+            remove 1 from {timer.min}
+        if {timer.sek} is less than 2:
+            if {timer.min} is less than 1:
+                broadcast "&8[§x§f§b§5§9§b§fD§x§f§b§5§4§a§bo§x§f§c§4§e§9§7o§x§f§c§4§9§8§3m§x§f§c§4§4§7§0s§x§f§c§3§f§5§cd§x§f§d§3§9§4§8a§x§f§d§3§4§3§4y&8] &cDie Vorbereitungen sind nun vorrüber! Möge der Kampf beginnen!"
+                delete {doomsday.vorbereitung}
+                wait 5 seconds
+                make console execute command "doomsday start"
+                loop all players:
+                    make console execute command "playsound minecraft:entity.ender_dragon.ambient ambient @a ~ ~ ~ 1 1"
