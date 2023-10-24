@@ -1,3 +1,1 @@
-# Craftattack-By-DaLoL
-
-> Die Craftattack API von mir ist nun für die Öffentlichkeit verfügbar!
+###### hier kommt glaub nix mehr hin lol
